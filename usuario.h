@@ -4,7 +4,7 @@ Class Usuario
 {
     protected:
         std::string _nome;
-        int _cpf;
+        long int _cpf;
     public:
         Usuario(std::string nome, int cpf);
 
