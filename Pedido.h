@@ -3,9 +3,10 @@
 class Pedido
 {
 	public:
-		 Pedido();
+		Pedido();
 		~Pedido();
-	         produto carrinho[];
+		Produto carrinho[100];
+	    int quatidade[100];
 
 
 	private:

@@ -1,6 +1,6 @@
 #include <iostream>
 
-Class Usuario
+class Usuario
 {
     protected:
         std::string _nome;
