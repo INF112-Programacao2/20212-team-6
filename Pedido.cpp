@@ -8,18 +8,19 @@
 int Pedido::ph_id = -8192;
 Pedido::Pedido()
 {
-	
+	std::cout << sizeof(quantidade) << std::endl;
 	for (int x = 0;x < size;x++)
 	{
 		quantidade[x] = 0;
+		carrinho[x] = Produto(ph_id, 0);
 
 	}
-	
-	
+
+
 
 }
 
-void Pedido:: add_produto(Produto p)
+void Pedido::add_produto(Produto p)
 {
 	for (int x = 0;x < size;x++)
 	{
@@ -31,7 +32,7 @@ void Pedido:: add_produto(Produto p)
 		if (carrinho[x].getID() == Pedido::ph_id)
 		{
 			carrinho[x] = p;
-			quantidade[x]=1;
+			quantidade[x] = 1;
 			break;
 		}
 	}
