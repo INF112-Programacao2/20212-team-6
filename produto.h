@@ -1,11 +1,12 @@
 class Produto {
-    private:
+private:
     int _id;
     double _preco;
     int _quantidade;
     bool _emEstoque;
 
-    public:
+public:
+    Produto();
     Produto(int id, double preco, int quantidade);
 
     int getID();
