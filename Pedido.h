@@ -10,7 +10,7 @@ class Pedido
 		~Pedido();
 		Produto carrinho[size];
 		int quantidade[size];
-		void add_produto(Produto p);
+		void add_produto(Produto& p);
 		double valor_total();
 
 
