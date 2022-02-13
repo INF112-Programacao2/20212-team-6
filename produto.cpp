@@ -1,30 +1,34 @@
 #include "produto.h"
 
-Produto::Produto(int id, double preco, int quantidade){
+Produto::Produto()
+{
+
+}
+Produto::Produto(int id, double preco, int quantidade) {
     _id = id;
     _preco = preco;
     _quantidade = quantidade;
 }
 
-int Produto::getID(){
+int Produto::getID() {
     return _id;
 }
 
-double Produto::getPreco(){
+double Produto::getPreco() {
     return _preco;
 }
 
-int Produto::getQuantidade(){
+int Produto::getQuantidade() {
     return _quantidade;
 }
 
-bool Produto::getEmEstoque(){
+bool Produto::getEmEstoque() {
     return _emEstoque;
 }
 
-void Produto::setEmEstoque(){
-    if(_quantidade!=0)
-        _emEstoque=true;
+void Produto::setEmEstoque() {
+    if (_quantidade != 0)
+        _emEstoque = true;
     else
-        _emEstoque=false;
+        _emEstoque = false;
 }
