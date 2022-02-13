@@ -3,7 +3,7 @@
 #include  <algorithm>
 #include <fstream>
 #include "Pedido.h"
-#include "produto.h"
+#include "Produto.h"
 
 int Pedido::ph_id = -8192;
 Pedido::Pedido()
@@ -12,7 +12,7 @@ Pedido::Pedido()
 	for (int x = 0;x < size;x++)
 	{
 		quantidade[x] = 0;
-		carrinho[x] = Produto(ph_id, 0);
+		carrinho[x] = Produto(ph_id, 0,199);
 
 	}
 
@@ -20,21 +20,26 @@ Pedido::Pedido()
 
 }
 
-void Pedido::add_produto(Produto p)
+void Pedido::add_produto(Produto& p)
 {
-	for (int x = 0;x < size;x++)
+	p.setEmEstoque();
+	if (p.getEmEstoque() == true)
 	{
-		if (carrinho[x].getID() == p.getID())
+		for (int x = 0;x < size;x++)
 		{
-			quantidade[x] ++;
-			break;
+			if (carrinho[x].getID() == p.getID())
+			{
+				quantidade[x] ++;
+				break;
+			}
+			if (carrinho[x].getID() == Pedido::ph_id)
+			{
+				carrinho[x] = p;
+				quantidade[x] = 1;
+				break;
+			}
 		}
-		if (carrinho[x].getID() == Pedido::ph_id)
-		{
-			carrinho[x] = p;
-			quantidade[x] = 1;
-			break;
-		}
+		
 	}
 }
 
