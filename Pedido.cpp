@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include  <algorithm>
+#include <algorithm>
 #include <fstream>
 #include "Pedido.h"
 #include "Produto.h"
