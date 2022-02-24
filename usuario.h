@@ -7,6 +7,7 @@ class Usuario
         long int _cpf;
     public:
         Usuario(std::string nome, int cpf);
+        std::string get_nome();
 
 
 };
