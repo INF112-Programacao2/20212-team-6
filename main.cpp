@@ -49,28 +49,20 @@ int teste_db()
         escrever += lista_ini[c].get_nome() + "|" + "1234" + "%";
     }
 
-    //Eh criado um ofstream para salvar o arquivo
-    std::ofstream wf("users.dat", std::ios::out | std::ios::binary);
-    if (!wf) {
-        std::cout << "Cannot open file!" << std::endl;
-        return 1;
+    Db_sys::salvar("users",escrever);
+    
+
+    std::string b = Db_sys::ler("users", sizeof(escrever));
+    for (int d = 0;d < sizeof(b);d++)
+    {
+        buf[d] = b[d];
     }
-    wf.write(escrever.c_str(), sizeof(escrever));
-    wf.close();
 
     // A partir dai, existe um arquivo codifcado em binario com a string com as informacoes dos usuarios
 
 
     //Cria se uma ifstream para ler o arquivo
-    std::ifstream rf("users.dat", std::ios::out | std::ios::binary);
-    if (!rf) {
-        std::cout << "Cannot open file!" << std::endl;
-        return 1;
-    }
-
-    //Leia o arquivo que escrevemos
-    rf.read(buf, sizeof(escrever));
-    rf.close();
+  
     char* tk;
 
     //Separar os usuarios contidos na string com a funcao strtok_s
@@ -112,6 +104,7 @@ int teste_db()
     std::cout << "Segundo usuario: " << (std::string)Lista_fin[1].get_nome() << std::endl;
     std::cout << "Terceiro usuario: " << (std::string)Lista_fin[2].get_nome() << std::endl;
 
+    
 
     return 0;
 
