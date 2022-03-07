@@ -13,7 +13,7 @@ int Db_sys::cy = 13;
 int Db_sys::salvar(std::string arq, std::string cont)
 {
     //cont += "0";
-    cy = std::max(3, rand() % 15);
+    //cy = std::max(3, rand() % 15);
 
     for (int c = 0;c < sizeof(cont);c++)
     {
