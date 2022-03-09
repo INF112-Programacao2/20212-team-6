@@ -19,7 +19,7 @@ void Cliente::setCPF( unsigned long long int CPF) {
 }
 
 void Cliente::setID(int id) {
-        this->ID_usuario = id;
+        this->_id_usuario = id;
 }
 
 void Cliente::setEndereco(std::string Endereco) {
@@ -41,7 +41,7 @@ std::string Cliente::getNome() {
 }
 
 int Cliente::getID() {
-    return ID_usuario;
+    return _id_usuario;
 }
 
 std::string Cliente::getEndereco() {
