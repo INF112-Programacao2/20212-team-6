@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <fstream>
 #include "Pedido.h"
-#include "Produto.h"
 
 int Pedido::ph_id = -8192;
 Pedido::Pedido()
