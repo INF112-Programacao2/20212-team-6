@@ -3,9 +3,14 @@
 class FoneDeOuvido : public Produto {
 private:
     bool _bt;
-    // tipo
+    std::string _tipo;
 public:
+    //Construtor
+    FoneDeOuvido(int id, double preco, int quantidade, std::string marca, bool bt, std::string tipo);
     //Gets
     bool getBt();
-    //getTipo
+    std::string getTipo();
+    //Sets
+    void setBt(bool bt);
+    void setTipo(std::string tipo);
 };
