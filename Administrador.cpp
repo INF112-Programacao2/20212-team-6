@@ -5,10 +5,11 @@
 #include "Administrador.h"
 #include "Produto.h"
 #include "Pedido.h"
+#include "Estoque.h"
 
-Administrador::Administrador(std::string nome, int cpf) : Usuario(nome,cpf) {}
+Administrador::Administrador(std::string nome, int cpf, int id) : Usuario(nome,cpf,id) {}
 
-void Admin::adicionarProduto() {
+void Administrador::adicionarProduto() {
     EstoqueDaLoja.adicionar_produto();
 }
 
