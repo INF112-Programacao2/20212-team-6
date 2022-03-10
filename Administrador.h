@@ -11,7 +11,7 @@ class Administrador : public Usuario {
     protected:
         Estoque EstoqueDaLoja;       // estoque
     public:
-        Admin(std::string nome, int cpf);
+        Administrador(std::string nome, int cpf);
         void menuAdm();
         void adicionarProduto();
         void excluirProduto();                 // será implementada quando houver o estoque real
