@@ -5,10 +5,11 @@ Produto::Produto()
 
 }
 
-Produto::Produto(int id, double preco, int quantidade) {
+Produto::Produto(int id, double preco, int quantidade, std::string marca) {
     _id = id;
     _preco = preco;
     _quantidade = quantidade;
+    _marca = marca;
 }
 
 int Produto::getID() {
