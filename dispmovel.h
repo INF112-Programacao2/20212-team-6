@@ -6,12 +6,14 @@ private:
     int _ram;
     int _armazenamento;
 public:
+    //Construtor
+    DispMovel(int id, double preco, int quantidade, std::string marca, int tela, int ram, int armazenamento);
     //Gets
     int getTela();
     int getRam();
     int getArmazenamento();
     //Sets
-    void setTela();
-    void setRam();
-    void setArmazenamento();
+    void setTela(int tela);
+    void setRam(int ram);
+    void setArmazenamento(int armazenamento);
 };
