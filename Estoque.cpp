@@ -8,8 +8,6 @@
 int Estoque::indiceDoEstoque = 0;           //inicializando controlador do indice do estoque
 
 void Estoque::adicionar_produto() {
-    Produto p;                  // instanciando objeto da classe produto para criar um novo produto
-
     int codigo;                 // atributos criados localmente para serem repassados ao métodos set do objeto produto
     double preco;
     int quantidade;
@@ -21,10 +19,12 @@ void Estoque::adicionar_produto() {
     std::cin >> preco;
     std::cout << "QUANTIDADE: ";
     std::cin >> quantidade;
-
-    p.set_id(codigo);               //repassando dados para o objeto produto criado;
-    p.set_preco(preco);
-    p.set_quantidade(quantidade);
+    std::cout << "MARCA: ";
+    std::cin.ignore();
+    std::getline(std::cin, marca);
+    
+    Produto p(codigo, preco, quantidade);                  // instanciando objeto da classe produto para criar um novo produto
+    p.setMarca(marca)
     
     Estoque.push_back(p);           // guardando produto criado no estoque teste
     indiceDoEstoque++;              // aumenta sempre que um novo produto é adicionado para mover o indice para posição seguinte
@@ -43,6 +43,9 @@ void Estoque::Relatorio() {
             std::cout << "PRECO: " << Estoque[i].getPreco() << std::endl;
             std::cout << "QUANTIDADE: " << Estoque[i].getQuantidade() << std::endl;
         std::cout << "______________________________________________\n";
+            
+        valorTotalDoEstoque += Estoque[i].getPreco() * Estoque[i].getQuantidade(); // calculando valor total do estoque em R$
         }
     }
+    std::cout << "Valor total do estoque em reais: R$ " << std::fixed << std::setprecision(2) << valorTotalDoEstoque << std::endl;
 }
