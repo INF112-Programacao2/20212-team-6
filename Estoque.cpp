@@ -23,8 +23,7 @@ void Estoque::adicionar_produto() {
     std::cin.ignore();
     std::getline(std::cin, marca);
     
-    Produto p(codigo, preco, quantidade);                  // instanciando objeto da classe produto para criar um novo produto
-    p.setMarca(marca)
+    Produto p(codigo, preco, quantidade, marca);                  // instanciando objeto da classe produto para criar um novo produto
     
     Estoque.push_back(p);           // guardando produto criado no estoque teste
     indiceDoEstoque++;              // aumenta sempre que um novo produto é adicionado para mover o indice para posição seguinte
