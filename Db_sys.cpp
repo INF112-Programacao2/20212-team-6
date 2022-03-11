@@ -13,9 +13,9 @@ int Db_sys::cy = 13;
 int Db_sys::salvar(std::string arq, std::string cont)
 {
     //cont += "0";
-    //cy = std::max(3, rand() % 15);
+    cy = std::max(3, rand() % 15);
 
-    for (int c = 0;c < sizeof(cont);c++)
+    for (int c = 0;c < cont.size();c++)
     {
         cont[c] += cy;
     }
@@ -27,7 +27,7 @@ int Db_sys::salvar(std::string arq, std::string cont)
         std::cout << "Cannot open file1!" << std::endl;
         return 1;
     }
-    wf.write(cont.c_str(), sizeof(cont));
+    wf.write(cont.c_str(), cont.size());
     wf.close();
 }
 
