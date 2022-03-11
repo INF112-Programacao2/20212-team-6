@@ -2,6 +2,7 @@
 #define ESTOQUE_H
 
 #include <vector>
+#include <iomanip>
 
 #include "produto.h"
 

@@ -11,6 +11,7 @@ void Estoque::adicionar_produto() {
     int codigo;                 // atributos criados localmente para serem repassados ao métodos set do objeto produto
     double preco;
     int quantidade;
+    std::string marca;
     
     std::cout << "Complete as informacoes abaixo para cadastrar o novo produto\n";
     std::cout << "CODIGO: ";
