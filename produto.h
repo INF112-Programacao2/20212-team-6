@@ -12,6 +12,7 @@ private:
 public:
     //Construtor
     Produto();
+    Produto(int id, double preco, int quantidadem);
     Produto(int id, double preco, int quantidadem, std::string marca);
 
     //Gets
