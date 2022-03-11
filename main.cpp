@@ -1,3 +1,4 @@
+
 #include <cstring>
 #include <algorithm>
 #include <fstream>
@@ -6,8 +7,7 @@
 #include <string>
 #include "Pedido.h"
 #include "Usuario.h"
-
-
+#include "Db_sys.h"
 
 int teste_db()
 {
@@ -16,12 +16,12 @@ int teste_db()
 
     const int size = 3;
     //Para encher espaco
-    Usuario ni = Usuario("Ninguem", 0);
+    Usuario ni = Usuario("Ninguem", 0,0);
 
     //Usuarios a serem copiados
-    Usuario admin = Usuario("Admin", 1234);
-    Usuario jo = Usuario("Joao", 9223);
-    Usuario ma = Usuario("Ma", 5782);
+    Usuario admin = Usuario("Admin", 1234,1);
+    Usuario jo = Usuario("Joao", 9223,2);
+    Usuario ma = Usuario("Ma", 5782,3);
 
     
     Usuario lista_ini[size] = { admin,jo,ma };
@@ -88,7 +88,7 @@ int teste_db()
         tem[qx[c].size()] = '\0';
         nm = strtok_s(tem, "|", &tk);
         cf = strtok_s(NULL, "|", &tk);
-        Lista_fin[c] = Usuario(nm,std::stoi(cf));
+        Lista_fin[c] = Usuario(nm,std::stoi(cf),1);
         
     }
 
@@ -112,6 +112,20 @@ int teste_db()
 
 int main()
 {
+    std::ifstream rf("users.dat", std::ios::out | std::ios::binary);
+    if (!rf) {
+        std::cout << "Registro de usuario nao encontrado, criando registro padrao" << std::endl;
+        std::string df_user = "Admin|12345|0";
+        Db_sys::salvar("users", df_user);
+
+    }
+    rf.close();
+    
+    //teste_db();
+   
+
 
     return 0;
 }
+
+
