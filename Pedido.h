@@ -1,5 +1,5 @@
 #pragma once
-#include "produto.h"
+#include "Produto.h"
 
 class Pedido
 {
@@ -12,6 +12,10 @@ class Pedido
 		int quantidade[size];
 		void add_produto(Produto& p);
 		double valor_total();
+		int p_size;
+		void limpar_carrinho();
+		int remover_item(std::string in);
+		void listar_produtos();
 
 
 
