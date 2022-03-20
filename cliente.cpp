@@ -37,6 +37,14 @@ void Cliente::setSelecao(int opc) {
     this->selecao = opc;
 }
 
+void Cliente::setP(Produto p){
+    this->p = p;
+}
+
+void Cliente::setRemove(std::string remove){
+    this->remove=remove;
+}
+
 // MÉTODOS GET
 std::string Cliente::getNome() {
     return _nome;
@@ -60,6 +68,14 @@ unsigned long long int Cliente::getTelefone() {
 
 int Cliente::getSelecao(){
     return selecao;
+}
+
+Produto Cliente::getP(){
+    return p;
+}
+
+std::string Cliente::getRemove(){
+    return remove;
 }
 // MOSTRA DADOS DO CLIENTE NA TELA
 

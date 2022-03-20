@@ -23,6 +23,8 @@ class Cliente : public Usuario {
     void setEndereco(std::string Endereco);
     void setTelefone( unsigned long long int tel);
     void setSelecao(int opc);
+    void setP(Produto p);
+    void setRemove(std::string remove);
 
     //metodos get
     std::string getNome();
@@ -31,6 +33,8 @@ class Cliente : public Usuario {
     std::string getEndereco();
     unsigned long long int getTelefone();
     int getSelecao();
+    Produto getP();
+    std::string getRemove();
 
     void exibirDados();
     void meuCarrinho();
