@@ -18,3 +18,16 @@ void Televisores::setTela(int tela){
 void Televisores::setResolucao(int resolucao){
     _resolucao = resolucao;
 }
+
+void Televisores::imprimirProduto() {
+    std::cout << "________________________________________________________________\n";
+    std::cout << std::endl;
+    std::cout << "CODIGO: " << getID() << std::endl;
+    std::cout << "PRECO: R$" << getPreco() << std::endl;
+    std::cout << "QUANTIDADE: " << getQuantidade() << std::endl;
+    std::cout << "MARCA: " << getMarca() << std::endl;
+    std::cout << "TAMANHO DA TELA: " << getTela() << " POLEGADAS"<< std::endl;
+    std::cout << "RESOLUCAO: " << getResolucao() << " p"<< std::endl;
+    std::cout << std::endl;    
+    std::cout << "________________________________________________________________\n";
+}
