@@ -1,11 +1,10 @@
+#include <iostream>
+
 #include "produto.h"
 
-Produto::Produto()
-{
+Produto::Produto() { }
 
-}
-
-Produto::Produto(int id, double preco, int quantidade){
+Produto::Produto(int id, double preco, int quantidade) {
     _id = id;
     _preco = preco;
     _quantidade = quantidade;
@@ -47,4 +46,12 @@ void Produto::setEmEstoque() {
 
 void Produto::setMarca(std::string marca) {
     _marca = marca;
+}
+
+void Produto::imprimirProduto()
+{
+    std::cout << "CODIGO: " << getID() << std::endl;
+    std::cout << "PRECO: " << getPreco() << std::endl;
+    std::cout << "QUANTIDADE: " << getQuantidade() << std::endl;
+    std::cout << "MARCA: " << getMarca() << std::endl;
 }
