@@ -26,3 +26,16 @@ void Notebook::setRam(int ram){
 void Notebook::setTela(int tela){
     _tela = tela;
 }
+
+void Notebook::imprimirProduto() {
+    std::cout << "________________________________________________________________\n";
+    std::cout << std::endl;
+    std::cout << "CODIGO: " << getID() << std::endl;
+    std::cout << "PRECO: R$" << getPreco() << std::endl;
+    std::cout << "QUANTIDADE: " << getQuantidade() << std::endl;
+    std::cout << "MARCA: " << getMarca() << std::endl;
+    std::cout << "TAMANHO DA TELA: " << getTela() << " POLEGADAS"<< std::endl;
+    std::cout << "MEMORIA RAM: " << getRam() << " GIGABYTES"<< std::endl;
+    std::cout << std::endl;    
+    std::cout << "________________________________________________________________\n";
+}
