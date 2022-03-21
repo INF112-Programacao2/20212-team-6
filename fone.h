@@ -1,3 +1,6 @@
+#ifndef FONE_H
+#define FONE_H
+
 #include "produto.h"
 
 class FoneDeOuvido : public Produto {
@@ -13,4 +16,8 @@ public:
     //Sets
     void setBt(bool bt);
     void setTipo(std::string tipo);
+    //função para visualizar dados do produto derivada da classe base
+    void imprimirProduto() override;
 };
+
+#endif
