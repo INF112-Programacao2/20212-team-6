@@ -2,20 +2,26 @@
 #define ESTOQUE_H
 
 #include <vector>
-#include <iomanip>
 
 #include "produto.h"
 
 class Estoque {
+    protected:
+        static double valorTotalDoEstoque;
+        static int qtdDeProdutos;
     public: 
-        std::vector<Produto> Estoque;          // foi usado o tipo std::vector por conta de sua alocação dinâmica automática
-        static int indiceDoEstoque;            // controla o indice do estoque para quando novos produtos forem adicionados
+        Estoque();
+        static std::vector<Produto*> Estoque1;   // foi usado o tipo std::vector por conta de sua alocação dinâmica automática
         void adicionar_produto();
-        void Relatorio();
+        void excluir_produto();
+        static void imprimeProdutoEmEstoque(int a, int b);
+        static void Relatorio();   // dá algumas opcoes ao usuario e exibe informações do estoque a partir delas
+        static void setValorTotalDoEstoque(int qtde, double preco);
+        static void setQtdDeProdutos(int qtde);
+        static double getValorTotalDoEstoque();
+        static int getQtdDeProdutos();
+        static int geradorID(int x, int y); // gera automaticamente um ID para o produto no momento do seu cadastro
+        ~Estoque();
 };
 
 #endif
-
-// falta o valor total do estoque em reais, os diferentes tipos de produtos, quanto tem em reais de cada produto, quantos produtos saíram com as vendas,
-// quantos produtos entraram com a compra de novos produtos;
-// ideia: dar ao administrador várias opcoes de informações que ele pode visualizar 
