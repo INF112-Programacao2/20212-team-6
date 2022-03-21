@@ -1,3 +1,6 @@
+#ifndef DISPMOVEL_H
+#define DISPMOVEL_H
+
 #include "produto.h"
 
 class DispMovel : public Produto {
@@ -16,4 +19,6 @@ public:
     void setTela(int tela);
     void setRam(int ram);
     void setArmazenamento(int armazenamento);
+    //função para visualizar dados do produto derivada da classe base
+    void imprimirProduto() override;
 };
