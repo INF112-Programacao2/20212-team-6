@@ -22,3 +22,5 @@ public:
     //função para visualizar dados do produto derivada da classe base
     void imprimirProduto() override;
 };
+
+#endif
