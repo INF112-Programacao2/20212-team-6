@@ -1,3 +1,6 @@
+#ifndef NOTEBOOK_H
+#define NOTEBOOK_H
+
 #include "produto.h"
 
 class Notebook : public Produto {
@@ -16,4 +19,8 @@ public:
     void setTela(int tela);
     void setRam(int ram);
     void setArmazenamento(int armazenamento);
+    //função para visualizar dados do produto derivada da classe base
+    void imprimirProduto() override;
 };
+
+#endif
