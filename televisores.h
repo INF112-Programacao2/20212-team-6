@@ -1,3 +1,6 @@
+#ifndef TELEVISORES_H
+#define TELEVISORES_H
+
 #include "produto.h"
 
 class Televisores : public Produto {
@@ -13,4 +16,9 @@ public:
     //Sets
     void setTela(int tela);
     void setResolucao(int resolucao);
+    
+    //função para visualizar dados do produto derivada da classe base
+    void imprimirProduto() override;
 };
+
+#endif
