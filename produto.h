@@ -1,3 +1,6 @@
+#ifndef PRODUTO_H
+#define PRODUTO_H
+
 #include <iostream>
 
 class Produto {
@@ -14,6 +17,7 @@ public:
     Produto();
     Produto(int id, double preco, int quantidadem);
     Produto(int id, double preco, int quantidadem, std::string marca);
+    virtual void imprimirProduto();     // exibe informações do produto, será sobrescrita nas subclasses
 
     //Gets
     int getID();
@@ -29,3 +33,5 @@ public:
     void setMarca(std::string marca);
 
 };
+
+#endif
