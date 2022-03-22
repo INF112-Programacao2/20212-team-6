@@ -3,5 +3,7 @@
 
 void cadastraLogin();
 bool verificaLogin();
+bool menuPrincipal();
+void imprimeASCII();
 
 #endif
