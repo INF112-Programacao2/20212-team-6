@@ -112,6 +112,20 @@ int teste_db()
 
 int main()
 {
+    //Início do programa
+    //chama a função de Menu Principal enquanto o login não for concedido.
+    imprimeASCII();
+    try{
+        while(true){
+            if(menuPrincipal())
+                break;
+        }
+    }
+    catch(std::invalid_argument &e){
+        std::cout << e.what();
+        return 1;
+    }
+    //Funcionamento geral do programa.
     std::string q;
     std::ifstream rf("users.dat", std::ios::out | std::ios::binary);
     if (!rf) {
