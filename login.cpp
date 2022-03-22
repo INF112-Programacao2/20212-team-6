@@ -37,7 +37,8 @@ void cadastraLogin(){
 bool verificaLogin(){
     std::ifstream entrada("database.dat");
     char login[65];
-    char linhatemp[65]; // string que vai guardar temporariamente cada linha da database
+    // string que vai guardar temporariamente cada linha da database
+    char linhatemp[65];
     char user[32];
     char password[32];
     char userdecrypt[32];
@@ -60,16 +61,19 @@ bool verificaLogin(){
     `"""""""""""""`  '-'       
 )" << '\n';
     std::cout << "Verificando login...\n";
+    //Faz uma cópia do usuario e senha para a string login
     strcpy(login, user);
     strcat(login, ":");
     strcat(login, password);
+    //Loop para verificar cada char do arquivo até encontrar uma linha válida
     while(true){
         entrada.getline(linhatemp, 65);
         for(int i=0;i<strlen(linhatemp);i++){
             if(linhatemp[i]!=':')
+                //Decifrando a criptografia
                 linhatemp[i] = linhatemp[i]+11;
         }
-
+        //Caso encontre um login válido, o programa retorna true e é liberado para o usuário.
         if(strcmp(linhatemp,login)==0){
             std::cout << "Acesso garantido!\n";
             return true;
@@ -102,6 +106,7 @@ void imprimeASCII(){
 }
 bool menuPrincipal(){
     int escolha;
+    //Fazendo o usuário escolher se deseja cadastrar uma nova conta ou efetuar login
     std::cout << "\n\t1 - Login\n\t2 - Cadastro\n";
 
     std::cout << "\nSelecione uma opção: "; 
@@ -113,10 +118,12 @@ bool menuPrincipal(){
         throw std::invalid_argument("Escolha uma opção válida.\n");
     }
     if(escolha==1){
+        //Verifica se o usuário pode efetuar login
         if(verificaLogin())
             return true;
     }
     if(escolha==2){
+        //Cadastra o login de usuário
         cadastraLogin();
     }
     return false;
