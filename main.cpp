@@ -144,7 +144,7 @@ int main()
     rf.close();
     
     
-    system("PAUSE");
+    
     
     
    
