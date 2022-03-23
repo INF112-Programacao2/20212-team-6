@@ -1,7 +1,7 @@
 #include "fone.h"
 
-FoneDeOuvido::FoneDeOuvido(int id, double preco, int quantidade, std::string marca, bool bt, std::string tipo):
-    Produto(id, preco, quantidade, marca), _bt(bt), _tipo(tipo) {}
+FoneDeOuvido::FoneDeOuvido(int id, double preco, int quantidade, std::string marca, std::string descricao, bool bt, std::string tipo):
+    Produto(id, preco, quantidade, marca, descricao), _bt(bt), _tipo(tipo) {}
 
 bool FoneDeOuvido::getBt(){
     return _bt;
@@ -12,17 +12,20 @@ std::string FoneDeOuvido::getTipo(){
 }
 
 void FoneDeOuvido::imprimirProduto() {
-    std::cout << "________________________________________________________________\n";
+    std::cout << "______________________________________________________________________\n";
+    if (!getEmEstoque())
+        std::cout << "\tATENÇÃO: PRODUTO FORA DE ESTOQUE!\n";
     std::cout << std::endl;
-    std::cout << "CODIGO: " << getID() << std::endl;
-    std::cout << "PRECO: R$ " << getPreco() << std::endl;
-    std::cout << "QUANTIDADE: " << getQuantidade() << std::endl;
-    std::cout << "MARCA: " << getMarca() << std::endl;
-    std::cout << "TIPO: " << getTipo() << std::endl;
+    std::cout << "\tCODIGO: " << getID() << std::endl;
+    std::cout << "\tDESCRIÇÃO DO PRODUTO: " << getDescricao() << std::endl;
+    std::cout << "\tPRECO: R$ " << getPreco() << std::endl;
+    std::cout << "\tQUANTIDADE: " << getQuantidade() << std::endl;
+    std::cout << "\tMARCA: " << getMarca() << std::endl;
+    std::cout << "\tTIPO: " << getTipo() << std::endl;
     if (getBt())
-        std::cout << "CONEXAO BLUETOOTH DISPONIVEL PARA O MODELO" << std::endl;
+        std::cout << "\tCONEXAO BLUETOOTH DISPONIVEL PARA O MODELO" << std::endl;
     else
-        std::cout << "CONEXAO BLUETOOTH NAO DISPONIVEL PARA O MODELO" << std::endl;
+        std::cout << "\tCONEXAO BLUETOOTH NAO DISPONIVEL PARA O MODELO" << std::endl;
     std::cout << std::endl;    
-    std::cout << "________________________________________________________________\n";
+    std::cout << "______________________________________________________________________\n";
 }
