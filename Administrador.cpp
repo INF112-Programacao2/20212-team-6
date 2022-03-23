@@ -1,11 +1,9 @@
 #include <string>
 #include <iostream>
 
-#include "usuario.h"
 #include "Administrador.h"
-#include "Produto.h"
-#include "Pedido.h"
-#include "Estoque.h"
+
+Estoque Administrador::EstoqueDaLoja = {};
 
 Administrador::Administrador(std::string nome, int cpf, int id) : Usuario(nome,cpf,id) {}
 
@@ -21,14 +19,20 @@ void Administrador::menuAdm() {
     int opcao;
     while (opcao != 3) {            // haverão mais opcoes conforme a necessidade de mais operações
         inicioMenu:
-        std::cout << "____________ MENU DO ADMINISTRADOR ___________\n";
-        std::cout << "                                     \n";
-        std::cout << "1) Adicionar produto ao estoque\n";
-        std::cout << "2) Exibir produtos em estoque\n";
-        std::cout << "3) Finalizar sessao\n";
-        std::cout << "______________________________________________\n";
-        std::cout << "Selecione uma opcao: ";
+        std::cout << std::endl;
+        std::cout << "________________________ MENU DO ADMINISTRADOR _______________________\n";
+        std::cout << std::endl;
+        std::cout << "\t1) Adicionar produto ao estoque\n";
+        std::cout << std::endl;
+        std::cout << "\t2) Consultar estoque\n";
+        std::cout << std::endl;
+        std::cout << "\t3) Finalizar sessão\n";
+        std::cout << std::endl;
+        std::cout << "______________________________________________________________________\n";
+        std::cout << std::endl;
+        std::cout << "\tSelecione uma opção: ";
         std::cin >> opcao;
+        std::cout << std::endl;
 
         system("clear"); // limpa a tela do terminal
 
@@ -46,7 +50,7 @@ void Administrador::menuAdm() {
                 std::cout << "FIM DA SESSÃO!\n";
                 break;
             default:
-                std::cout << "Opcao invalida! Selecione uma das opcoes DO MENU\n";
+                std::cout << "Opção invalida! Selecione uma das opções DO MENU\n";
                 goto inicioMenu;            // vai para o início do menu
                 break;
         }
