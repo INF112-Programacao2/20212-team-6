@@ -110,6 +110,85 @@ int teste_db()
 
 }
 
+int salvar_produto()
+{
+    Produto p1= Produto(123,100,2);
+   
+    Produto p2 = Produto(235, 80, 3);
+    Produto px[2] = { p1,p2 };
+    std::string res = "";
+    p1.imprimirProduto();
+    std::cout << std::endl;
+    p2.imprimirProduto();
+    
+    for (int a = 0;a < 2;a++)
+    {
+        res += std::to_string(px[a].getID()) + "|" + std::to_string(px[a].getPreco()) + "|" + std::to_string(px[a].getQuantidade()) +  "%";
+    }
+   
+    Db_sys::salvar("produtos",res);
+
+    
+
+    
+    return res.length();
+}
+
+
+int ler_produto()
+{
+   std::string out = Db_sys::ler("produtos",0);
+   
+   Produto p3 = Produto();
+   Produto p4 = Produto();
+   Produto py[2] = { p3,p4 };
+   std::string st_pd[2] = {};
+   char pd[1000] = {};
+   char tem[1000] = {};
+   char* tk;
+   for (int d = 0;d < out.length();d++)
+   {
+       pd[d] = out[d];
+      
+   }
+   st_pd[0] = strtok_s(pd, "%", &tk);
+   st_pd[1] = strtok_s(NULL, "%", &tk);
+   //std::cout << st_pd[1] << std::endl;
+   
+
+   std::string idx = "";
+   std::string prx = "";
+   std::string esx = "";
+   for (int d = 0;d < 2;d++)
+   {
+       idx = "";
+       prx = "";
+       esx = "";
+       st_pd[d].copy(tem, st_pd[d].length() + 1);
+       tem[st_pd[d].size()+1] = '\0';
+       idx = strtok_s(tem, "|", &tk);
+       prx = strtok_s(NULL, "|", &tk);
+       esx = strtok_s(NULL, "|", &tk);
+       if (d > 0)
+       {
+           esx.pop_back();
+       }
+       
+       py[d] = Produto(std::stoi(idx), std::stoi(prx), std::stoi(esx));
+   }
+
+   std::cout<<std::endl;
+   py[0].imprimirProduto();
+   std::cout << std::endl;
+   py[1].imprimirProduto();
+
+
+
+
+   
+   return 0;
+}
+
 int main()
 {
     //Início do programa
