@@ -10,7 +10,7 @@ private:
     int _armazenamento;
 public:
     //Construtor
-    Notebook(int id, double preco, int quantidade, std::string marca, int tela, int ram, int armazenamento);
+    Notebook(int id, double preco, int quantidade, std::string marca, std::string descricao, int tela, int ram, int armazenamento);
     //Gets
     int getTela();
     int getRam();
