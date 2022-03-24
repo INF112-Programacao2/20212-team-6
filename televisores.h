@@ -9,7 +9,7 @@ private:
     int _resolucao;
 public:
     //Construtor
-    Televisores(int id, double preco, int quantidade, std::string marca, int tela, int resolucao);
+    Televisores(int id, double preco, int quantidade, std::string marca, std::string descricao,  int tela, int resolucao);
     //Gets
     int getTela();
     int getResolucao();
