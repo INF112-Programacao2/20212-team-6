@@ -128,6 +128,21 @@ bool Estoque::identificaProduto(int codigo)
     return em_estoque;
 }
 
+std::string Estoque::identificaDescricaoProduto(int codigo)
+{   // varrerá o estoque procurando pelo produto com base no código e retorna sua descrição
+    std::string descricao;  
+    for (int i = 0; i < Estoque1.size(); i++)     
+    {
+        if (codigo==Estoque1[i]->getID()) 
+        {
+            descricao = Estoque1[i]->getDescricao();
+            break;
+        }    
+    }
+
+    return descricao;
+}
+
 void Estoque::adicionar_produto()
 {
     int opcao_produto; // registrará a opcao do usuario
