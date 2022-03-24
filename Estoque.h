@@ -31,7 +31,7 @@ class Estoque {
         static double getValorTotalDoEstoque();
         static int getQtdDeProdutos();
         static bool identificaProduto(int codigo);
-        static bool identificaProduto(int a, int b); // sobrecarga de método, procura o produto dentro de um intervalo
+        static std::string identificaDescricaoProduto(int codigo);  // procura produto por id e retorna sua descricao
         static int geradorID(int x, int y);                         // gera automaticamente um ID para o produto no momento do seu cadastro
         ~Estoque();
 };
