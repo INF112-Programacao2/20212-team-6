@@ -9,7 +9,7 @@ private:
     std::string _tipo;
 public:
     //Construtor
-    FoneDeOuvido(int id, double preco, int quantidade, std::string marca, bool bt, std::string tipo);
+    FoneDeOuvido(int id, double preco, int quantidade, std::string marca, std::string descricao, bool bt, std::string tipo);
     //Gets
     bool getBt();
     std::string getTipo();
