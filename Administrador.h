@@ -14,7 +14,7 @@ class Administrador : public Usuario {
         Administrador(std::string nome, int cpf, int id);
         void menuAdm();
         void adicionarProduto();
-        void excluirProduto();                 // será implementada quando houver o estoque real
+        void excluirProduto();
         void relatorioDeVendas();
         void relatorioDeEstoque();
 };
