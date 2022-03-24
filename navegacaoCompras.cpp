@@ -50,11 +50,14 @@ void NavegacaoCompras::imprimirProdutosDisponiveis()
 void NavegacaoCompras::selecaoDeCompra()
 {
     std::cout << "Selecione o produto que deseja comprar:\n";
-    std::cout << "Digite o codigo do produto desejado\n"
-    cin >> codigo;
+    std::cout << "Digite o codigo do produto desejado\n";
+    std::cin >> codigo;
 
     if(listar.identificaProduto(codigo) == false)
         std::cout << "Sinto muito. O produto acabou em nosso estoque mas fiquei de olho que em breve teremos mais!\n";
+    else
+    {
+        std::cout << listar.identificaDescricaoProduto(codigo); << std::endl;
+    }
     
- 
 }
