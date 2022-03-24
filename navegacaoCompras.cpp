@@ -54,7 +54,7 @@ void NavegacaoCompras::selecaoDeCompra()
     cin >> codigo;
 
     if(listar.identificaProduto(codigo) == false)
-        std::cout << "Sinto muito. O produto acabou em nosso estoque mas fiquei de olho que em breve teremos mais!\n"
+        std::cout << "Sinto muito. O produto acabou em nosso estoque mas fiquei de olho que em breve teremos mais!\n";
     
  
 }
