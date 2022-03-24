@@ -1,6 +1,8 @@
 #include<iostream>
 #include"navegacaoCompras.h"
 
+NavegacaoCompras::NavegacaoCompras() {}
+
 void NavegacaoCompras::imprimirProdutosDisponiveis()
 {
     menu_produtos:
@@ -43,4 +45,16 @@ void NavegacaoCompras::imprimirProdutosDisponiveis()
             break;
         }
     }
+}
+
+void NavegacaoCompras::selecaoDeCompra()
+{
+    std::cout << "Selecione o produto que deseja comprar:\n";
+    std::cout << "Digite o codigo do produto desejado\n"
+    cin >> codigo;
+
+    if(listar.identificaProduto(codigo) == false)
+        std::cout << "Sinto muito. O produto acabou em nosso estoque mas fiquei de olho que em breve teremos mais!\n"
+    
+ 
 }
