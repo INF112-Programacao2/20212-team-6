@@ -9,7 +9,7 @@
 
 class Administrador : public Usuario {
     protected:
-        Estoque EstoqueDaLoja;       // estoque
+        static Estoque EstoqueDaLoja;       // estoque
     public:
         Administrador(std::string nome, int cpf, int id);
         void menuAdm();
