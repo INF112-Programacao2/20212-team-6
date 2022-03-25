@@ -15,6 +15,7 @@ class Cliente : public Usuario {
         Produto *p;
         std::string remove;
         NavegacaoCompras Compras;
+        double saldoEmConta;
     public: 
         Cliente(std::string nome,  unsigned long long int cpf, int id_usuario, std::string endereco,  unsigned long long int telefone);
 
@@ -27,6 +28,7 @@ class Cliente : public Usuario {
     void setSelecao(int opc);
     void setP(Produto *p);
     void setRemove(std::string remove);
+    void setSaldo(double saldo);
 
     //metodos get
     std::string getNome();
@@ -37,6 +39,7 @@ class Cliente : public Usuario {
     int getSelecao();
     Produto getP();
     std::string getRemove();
+    double getSaldo();
 
     void exibirDados();
     void meuCarrinho();

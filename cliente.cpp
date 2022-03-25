@@ -8,6 +8,7 @@ Cliente::Cliente(std::string nome,  unsigned long long int cpf, int id_usuario,s
 : Usuario (nome, cpf, id_usuario) {
     this->endereco = endereco;
     this->telefone = telefone;
+    this->saldoEmConta = 1000;
 }
 
 // METODOS SET
@@ -45,6 +46,10 @@ void Cliente::setRemove(std::string remove){
     this->remove=remove;
 }
 
+void Cliente::setSaldo(double saldo){
+    this->saldoEmConta=saldo-Carrinho.valor_total();
+}
+
 // METODOS GET
 std::string Cliente::getNome() {
     return _nome;
@@ -77,6 +82,10 @@ Produto Cliente::getP(){
 std::string Cliente::getRemove(){
     return remove;
 }
+
+double Cliente::getSaldo(){
+    return saldoEmConta;
+}
 // MOSTRA DADOS DO CLIENTE NA TELA
 
 void Cliente::exibirDados() {
@@ -93,15 +102,16 @@ void Cliente::exibirDados() {
 void Cliente::meuCarrinho(){
     
     do{
-
+        menu_produtos:
         std::cout << "____________MEU CARRINHO____________\n\n";
         std::cout << "Prossiga selecionando uma das seguintes opcoes:\n";
         std::cout << "1) Visualizar meu carrinho\n";
         std::cout << "2) Adicionar itens\n";
         std::cout << "3) Remover itens\n";
         std::cout << "4) Limpar carrinho\n";
+        std::cout << "5) Concluir compra\n";
         std::cout << "_____________________________________\n";
-        std::cout << "Se deseja sair, digite 0\n";
+        std::cout << "Se deseja sair, digite 6\n";
         std::cin >> selecao;
 
         switch (selecao)
@@ -129,10 +139,29 @@ void Cliente::meuCarrinho(){
                 Carrinho.limpar_carrinho();
                 break;
             }
+            case 5:
+            {
+                std::cout <<"\n Valor total: " << Carrinho.valor_total();
+                std::cout << "Valor total em conta é R$ " << getSaldo()<< std::endl;
+                if(getSaldo()<Carrinho.valor_total())
+                {
+                    std::cout <<"Infelizmente você nao tem saldo suficiente para realizar essa compra.\n";
+                    std::cout <<"Se acredita que isso esteja errado, favor entrar em contato com um administrador (31 9999-9999).\n";
+                    break;
+                }
+                else
+                {
+                    setSaldo(saldoEmConta);
+                    std::cout << "O valor restante em conta é R$ " << getSaldo() << std::endl;
+                }
+            }
             default:
+            {
+                goto menu_produtos;
                 break;
+            }
         }
-    }while(selecao!=0);
+    }while(selecao<7);
 
 
 
