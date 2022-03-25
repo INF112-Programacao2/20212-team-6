@@ -94,22 +94,11 @@ void Estoque::imprimeProdutoEmEstoque(int a, int b)
                 break;
             }
         }
-        else
-        {    
-                std::cout << "\tProduto fora de estoque!\n";
-                break;
-        }
-    }
-}
-
-void Estoque::imprimeEstoque() 
-{
-    std::cout << "____________________________ ESTOQUE TOTAL ____________________________" << std::endl;
-    for (int i = 0; i < Estoque1.size(); i++)
-    {   
-        std::cout << std::endl;
-        Estoque1.at(i)->imprimirProduto();
-        std::cout << std::endl;
+        // else
+        // {    
+        //         std::cout << "\tProduto fora de estoque!\n";
+        //         break;
+        // }
     }
 }
 
@@ -141,6 +130,17 @@ std::string Estoque::identificaDescricaoProduto(int codigo)
     }
 
     return descricao;
+}
+
+void Estoque::imprimeEstoque() 
+{
+    std::cout << "____________________________ ESTOQUE TOTAL ____________________________" << std::endl;
+    for (int i = 0; i < Estoque1.size(); i++)
+    {   
+        std::cout << std::endl;
+        Estoque1.at(i)->imprimirProduto();
+        std::cout << std::endl;
+    }
 }
 
 void Estoque::adicionar_produto()
@@ -310,124 +310,28 @@ void Estoque::adicionar_produto()
     std::cout << "\tProduto adicionado ao estoque com sucesso!\n";
 }
 
-void Estoque::excluir_produto() 
-{
-    int codigo;        // atributos criados localmente para localizar o produto no estoque
-    int quantidade;
-    double preco;
-    int opcao_geral;
-    int opcao_est;
-    int opcao_consulta;
-    int nova_qtd;
-
-    menu_excluiProduto:
-    std::cout << "__________________________ OPÇÕES __________________________\n";
-    std::cout << std::endl;
-    std::cout << "  1. REMOVER SOMENTE ALGUMAS UNIDADES DO PRODUTO\n";
-    std::cout << "  2. REMOVER O PRODUTO DO ESTOQUE\n";
-    std::cout << std::endl;
-    std::cout << "____________________________________________________________\n";
-    std::cout << std::endl;
-    std::cout << "Digite uma das opções acima: ";
-    std::cin >> opcao_geral;
-    std::cout << std::endl;
-
-    switch(opcao_geral)
+void Estoque::excluir_produto(int codigo, int qdte) {    // verificar lógica disso
+    int qtde_produto_restante;
+    for (int i = 0; i < Estoque1.size(); i++)     
     {
-        case 1:
-        {   
-            // o usuário informará um código, que será usado para buscar pelo produto no estoque, e uma quantidade
-            // o produto será procurado, se for encontrado sua quantidade será atualizada com a subtração da quantidade informada pelo usuário
-            // caso contrário, será informado que o produto não está no estoque
-            std::cout << "\tDeseja consultar o estoque antes de prosseguir?" << std::endl;
-            std::cout << std::endl;
-            std::cout << "\t1. SIM\n";
-            std::cout << "\t2. NÃO\n";
-            std::cout << std::endl;
-            std::cout << "\tDigite uma das opções acima: ";
-            std::cin >> opcao_consulta;
-
-            if (opcao_consulta==1)
-                imprimeEstoque();
-
-            std::cout << "____________________________________________________________\n";
-            std::cout << std::endl;
-            std::cout << "  Preencha as informacoes abaixo\n";
-            std::cout << "\tCÓDIGO DO PRODUTO: ";
-            std::cin >> codigo;
-            std::cout << "\tQUANTIDADE A RETIRAR DO ESTOQUE: ";
-            std::cin >> quantidade;
-            std::cout << "____________________________________________________________\n";
-            std::cout << std::endl;
-
-            if (identificaProduto(codigo))
-            {
-                for (int i = 0; i < Estoque1.size(); i++)     
-                {
-                    if (codigo==Estoque1[i]->getID()) 
-                    {
-                        preco = Estoque1[i]->getPreco();
-                        nova_qtd = Estoque1[i]->getQuantidade() - quantidade;
-                        Estoque1[i]->setQuantidade(nova_qtd);   // atualizando quantidade do produto em questão
-                    }
-                }
-                setQtdDeProdutos(quantidade, 2);     // atualiza qtde total de produtos e valor total do estoque após exclusão do produto
-                setValorTotalDoEstoque(quantidade, preco, 2);
-
-                std::cout << "\tPRODUTO RETIRADO DO ESTOQUE COM SUCESSO!" << std::endl;
-                std::cout << std::endl;
-            }
-            else
-            {
-                std::cout << "ATENÇÃO: PRODUTO FORA DE ESTOQUE!" << std::endl;
-                std::cout << std::endl;
-            }
-            break;                     
+        if (codigo==Estoque1[i]->getID()) 
+        {
+            qtde_produto_restante = Estoque1[i]->getQuantidade() - qdte;
+            setQtdDeProdutos(qdte, 2);   // qtde de produtos em estoque
+            setValorTotalDoEstoque(qdte, Estoque1[i]->getPreco(), 2);   // atualiza valor do estoque
+            Estoque1[i]->setQuantidade(qtde_produto_restante);   // atualizando quantidade do produto em si
         }
-        case 2:
-        {   // o usuário informará um código, que será usado para buscar pelo produto no estoque
-            // a partir dele, o programa buscará pelo produto no estoque e o removerá
-            std::cout << "\tDeseja consultar o estoque antes de prosseguir?" << std::endl;
-            std::cout << std::endl;
-            std::cout << "\t1. SIM\n";
-            std::cout << "\t2. NÃO\n";
-            std::cout << std::endl;
-            std::cout << "\tDigite uma das opções acima: ";
-            std::cin >> opcao_consulta;
+    }
+}
 
-            if (opcao_consulta==1)
-                imprimeEstoque();
-
-            std::cout << std::endl;
-            std::cout << "  INFORME O CÓDIGO DO PRODUTO: ";
-            std::cin >> codigo;
-            std::cout << std::endl;
-            std::cout << "_________________________________________________________________\n";
-
-            if (identificaProduto(codigo))
-            {
-                for (int i = 0; i < Estoque1.size(); i++)     
-                {
-                    if (codigo==Estoque1[i]->getID()) 
-                    {   
-                        setQtdDeProdutos(Estoque1[i]->getQuantidade(), 2);  // atualizando valores antes da exclusão do produto
-                        setValorTotalDoEstoque(Estoque1[i]->getQuantidade(), Estoque1[i]->getPreco(), 2);
-                        Estoque1[i]->setQuantidade(0);
-                        break;
-                    }
-                }
-
-                std::cout << "\tPRODUTO RETIRADO DO ESTOQUE COM SUCESSO!" << std::endl;
-            }
-            else
-                std::cout << "\tATENÇÃO: PRODUTO FORA DE ESTOQUE!" << std::endl;
-
-            break;    
-        }
-        default:
+void Estoque::excluir_produto(int codigo) { // verificar lógica disso
+    for (int i = 0; i < Estoque1.size(); i++)     
+    {
+        if (codigo==Estoque1[i]->getID()) 
         {   
-            std::cout << "OPÇÃO INVÁLIDA! Selecione uma das opções DO MENU:\n";
-            goto menu_excluiProduto;
+            setQtdDeProdutos(Estoque1[i]->getQuantidade(), 2);  // atualizando valores antes da exclusão do produto
+            setValorTotalDoEstoque(Estoque1[i]->getQuantidade(), Estoque1[i]->getPreco(), 2);
+            Estoque1[i]->setQuantidade(0);
             break;
         }
     }
@@ -458,11 +362,11 @@ void Estoque::Relatorio()
         std::cout << std::endl;
         std::cout << "\t2. Visualizar todos os produtos\n";
         std::cout << std::endl;
-        std::cout << "\t3. Remover produto do estoque\n";
-        std::cout << std::endl;
         std::cout << "_________________________________________________________________________\n";
         std::cout << std::endl;
-        std::cout << "\tDigite um número correspondente a uma das opcoes acima: ";
+        std::cout << "\tDigite um número correspondente a uma das opcoes acima\n";
+        std::cout << std::endl;
+        std::cout << "\tOU Aperte 3 para voltar ao menu anterior: ";
         std::cin >> opcao_geral;
         std::cout << std::endl;
 
@@ -523,10 +427,7 @@ void Estoque::Relatorio()
                 break;
             }
             case 3:
-            {
-                excluir_produto();
                 break;
-            }
             default:
             {
                 std::cout << "OPÇÃO INVÁLIDA! Selecione uma das opções DO MENU:\n";

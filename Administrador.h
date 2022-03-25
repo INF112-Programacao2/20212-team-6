@@ -8,13 +8,12 @@
 #include "Estoque.h"
 
 class Administrador : public Usuario {
-    protected:
-        static Estoque EstoqueDaLoja;       // estoque
     public:
+        static Estoque EstoqueDaLoja;       // estoque
         Administrador(std::string nome, int cpf, int id);
         void menuAdm();
         void adicionarProduto();
-        void excluirProduto();
+        void excluirProduto();                 
         void relatorioDeVendas();
         void relatorioDeEstoque();
 };

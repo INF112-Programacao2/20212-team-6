@@ -22,7 +22,9 @@ class Estoque {
         Estoque();
         static std::vector<Produto*> Estoque1;          // foi usado o tipo vector por conta de sua alocação dinâmica automática
         void adicionar_produto();
-        static void excluir_produto();
+        // static void excluir_produto();
+        static void excluir_produto(int codigo, int qdte);      // sobrecarga de método para diferentes ocasiões de exclusão
+        static void excluir_produto(int codigo);
         static void imprimeEstoque();
         static void imprimeProdutoEmEstoque(int a, int b);
         static void Relatorio();                        // dá algumas opcoes ao usuario e gera relatório contendo informações do estoque a partir delas
@@ -31,7 +33,7 @@ class Estoque {
         static double getValorTotalDoEstoque();
         static int getQtdDeProdutos();
         static bool identificaProduto(int codigo);
-        static std::string identificaDescricaoProduto(int codigo);  // procura produto por id e retorna sua descricao
+        static std::string identificaDescricaoProduto(int codigo);
         static int geradorID(int x, int y);                         // gera automaticamente um ID para o produto no momento do seu cadastro
         ~Estoque();
 };
