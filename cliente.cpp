@@ -10,7 +10,7 @@ Cliente::Cliente(std::string nome,  unsigned long long int cpf, int id_usuario,s
     this->telefone = telefone;
 }
 
-// MÉTODOS SET
+// METODOS SET
 
 void Cliente::setNome(std::string Nome) {
         this->_nome = Nome;
@@ -45,7 +45,7 @@ void Cliente::setRemove(std::string remove){
     this->remove=remove;
 }
 
-// MÉTODOS GET
+// METODOS GET
 std::string Cliente::getNome() {
     return _nome;
 }

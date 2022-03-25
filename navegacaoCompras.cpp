@@ -65,7 +65,7 @@ Produto NavegacaoCompras::selecaoDeCompra()
 
 Produto NavegacaoCompras::RetornaProdutoBuscado(int codigo)
 {
-    Produto *busca; //recebera o produto buscado com base no codigo
+    Produto *busca=nullptr; //recebera o produto buscado com base no codigo
     for (int i = 0; i < Estoque1.size(); i++)     
     {
         if (codigo==Estoque1[i]->getID()) 
