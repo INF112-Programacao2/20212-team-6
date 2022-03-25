@@ -1,3 +1,5 @@
+#ifndef USUARIO_H
+#define USUARIO_H
 #include <iostream>
 
 class Usuario
@@ -12,3 +14,5 @@ class Usuario
 
 
 };
+
+#endif
