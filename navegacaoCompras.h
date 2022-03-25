@@ -1,6 +1,5 @@
-#ifndef NAVEGACAO_H
-#define NAVEGACAO_H
-
+#ifndef NAVEGACAOCOMPRAS_H
+#define NAVEGACAOCOMPRAS_H
 #include<iostream>
 #include"Estoque.h"
 #include"produto.h"
@@ -17,6 +16,7 @@ class NavegacaoCompras : public Estoque{
         void imprimirProdutosDisponiveis();
         Produto selecaoDeCompra();
         Produto RetornaProdutoBuscado(int codigo);
+        Produto RemocaoDaCompra();
 };
 
 #endif
