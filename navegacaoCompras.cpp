@@ -57,7 +57,23 @@ void NavegacaoCompras::selecaoDeCompra()
         std::cout << "Sinto muito. O produto acabou em nosso estoque mas fiquei de olho que em breve teremos mais!\n";
     else
     {
-        std::cout << listar.identificaDescricaoProduto(codigo); << std::endl;
+        std::cout << listar.identificaDescricaoProduto(codigo) << std::endl;
     }
     
+}
+
+Produto NavegacaoCompras::RetornaProdutoBuscado(int codigo)
+{
+    Produto *busca; //recebera o produto buscado com base no codigo
+    for (int i = 0; i < Estoque1.size(); i++)     
+    {
+        if (codigo==Estoque1[i]->getID()) 
+        {
+            //se encontra o produto no estoque com base no codigo, retorna o produto buscado
+            busca = Estoque1[i];
+            break;
+        }    
+    }
+
+    return *busca;
 }

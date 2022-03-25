@@ -2,7 +2,7 @@
 #include"Estoque.h"
 #include"produto.h"
 
-class NavegacaoCompras{
+class NavegacaoCompras : public Estoque{
     private:
         Estoque listar;
         int opc;
@@ -13,4 +13,5 @@ class NavegacaoCompras{
         NavegacaoCompras();
         void imprimirProdutosDisponiveis();
         void selecaoDeCompra();
+        Produto RetornaProdutoBuscado(int codigo);
 };
