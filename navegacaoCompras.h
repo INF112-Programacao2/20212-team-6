@@ -12,6 +12,6 @@ class NavegacaoCompras : public Estoque{
     public:
         NavegacaoCompras();
         void imprimirProdutosDisponiveis();
-        void selecaoDeCompra();
+        Produto selecaoDeCompra();
         Produto RetornaProdutoBuscado(int codigo);
 };

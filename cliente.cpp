@@ -37,7 +37,7 @@ void Cliente::setSelecao(int opc) {
     this->selecao = opc;
 }
 
-void Cliente::setP(Produto p){
+void Cliente::setP(Produto *p){
     this->p = p;
 }
 
@@ -71,7 +71,7 @@ int Cliente::getSelecao(){
 }
 
 Produto Cliente::getP(){
-    return p;
+    return *p;
 }
 
 std::string Cliente::getRemove(){
@@ -106,21 +106,31 @@ void Cliente::meuCarrinho(){
 
         switch (selecao)
         {
-        case 1:
-            Carrinho.listar_produtos();
-            std::cout <<"\n Valor total: " << Carrinho.valor_total();
-            break;
-        case 2:
-            Carrinho.add_produto(p);
-            break;
-        case 3:
-            Carrinho.remover_item(remove);
-            break;
-        case 4:
-            Carrinho.limpar_carrinho();
-            break;
-        default:
-            break;
+            case 1:
+            { 
+                Carrinho.listar_produtos();
+                std::cout <<"\n Valor total: " << Carrinho.valor_total();
+                break;
+            }
+            case 2:
+            {
+                Compras.imprimirProdutosDisponiveis();
+                *p = Compras.selecaoDeCompra();
+                Carrinho.add_produto(*p);
+                break;
+            }
+            case 3:
+            {
+                Carrinho.remover_item(remove);
+                break;
+            }
+            case 4:
+            {
+                Carrinho.limpar_carrinho();
+                break;
+            }
+            default:
+                break;
         }
     }while(selecao!=0);
 

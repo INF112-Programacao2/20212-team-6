@@ -47,7 +47,7 @@ void NavegacaoCompras::imprimirProdutosDisponiveis()
     }
 }
 
-void NavegacaoCompras::selecaoDeCompra()
+Produto NavegacaoCompras::selecaoDeCompra()
 {
     std::cout << "Selecione o produto que deseja comprar:\n";
     std::cout << "Digite o codigo do produto desejado\n";
@@ -58,6 +58,7 @@ void NavegacaoCompras::selecaoDeCompra()
     else
     {
         std::cout << listar.identificaDescricaoProduto(codigo) << std::endl;
+        return RetornaProdutoBuscado(codigo);
     }
     
 }

@@ -4,6 +4,7 @@
 #include "usuario.h"
 #include "Pedido.h"
 #include "produto.h"
+#include "navegacaoCompras.h"
 
 class Cliente : public Usuario {
     private: 
@@ -11,8 +12,9 @@ class Cliente : public Usuario {
         unsigned long long int telefone;
         Pedido Carrinho;
         int selecao;
-        Produto p;
+        Produto *p;
         std::string remove;
+        NavegacaoCompras Compras;
     public: 
         Cliente(std::string nome,  unsigned long long int cpf, int id_usuario, std::string endereco,  unsigned long long int telefone);
 
@@ -23,7 +25,7 @@ class Cliente : public Usuario {
     void setEndereco(std::string Endereco);
     void setTelefone( unsigned long long int tel);
     void setSelecao(int opc);
-    void setP(Produto p);
+    void setP(Produto *p);
     void setRemove(std::string remove);
 
     //metodos get
