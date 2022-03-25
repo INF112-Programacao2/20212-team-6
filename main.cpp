@@ -207,23 +207,7 @@ int main()
         std::cout << e.what();
         return 1;
     }
-    //Funcionamento geral do programa.
-    std::string q;
-    std::ifstream rf("users.dat", std::ios::out | std::ios::binary);
-    if (!rf) {
-        std::cout << "\x1b[s" << '\r';
-        
-        std::cout << "Registro de usuario nao encontrado, criando registro padrao" << std::endl;
-        std::string df_user = "Admin|12345|0";
-        Db_sys::salvar("users", df_user);
-        
-        system("PAUSE");
-        std::cout << "\x1b[2J" << std::endl;
-        std::cout << "\x1b[u";
-        
-
-    }
-    rf.close();
+   
     
     
     
