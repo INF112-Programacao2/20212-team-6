@@ -29,6 +29,7 @@ int Db_sys::salvar(std::string arq, std::string cont)
     }
     wf.write(cont.c_str(), cont.size());
     wf.close();
+     return 0;
 }
 
 std::string Db_sys::ler(std::string arq, int f_size)
