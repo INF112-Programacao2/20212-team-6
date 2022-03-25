@@ -1,5 +1,4 @@
 #include "usuario.h"
-#include <iostream>
 
 Usuario::Usuario(std::string nome, int cpf, int id_usuario)
 {
