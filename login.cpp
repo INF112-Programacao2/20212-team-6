@@ -3,6 +3,9 @@
 #include <string>
 #include <string.h>
 #include <fstream>
+#include "usuario.h"
+#include "administrador.h"
+
 
 void cadastraLogin(){
     FILE *ponteiro_arquivo; // criando um ponteiro para o arquivo
@@ -34,7 +37,7 @@ void cadastraLogin(){
     std::cout << "\tCadastro efetuado com sucesso!\n";
 }
 
-bool verificaLogin(){
+bool verificaLogin(bool& isAdmin){
     std::ifstream entrada("database.dat");
     char login[65];
     // string que vai guardar temporariamente cada linha da database
@@ -65,6 +68,13 @@ bool verificaLogin(){
     strcpy(login, user);
     strcat(login, ":");
     strcat(login, password);
+    if(strcmp(login, "admin:admin123")==0){
+        isAdmin = true;
+        return true;
+    }
+    else{
+        isAdmin = false;
+    }
     //Loop para verificar cada char do arquivo até encontrar uma linha válida
     while(true){
         entrada.getline(linhatemp, 65);
@@ -104,7 +114,7 @@ void imprimeASCII(){
     std::cout << "\n\t\t\t\tBem vindo, usuário!\n";
 
 }
-bool menuPrincipal(){
+bool menuPrincipal(bool& isAdmin){
     int escolha;
     //Fazendo o usuário escolher se deseja cadastrar uma nova conta ou efetuar login
     std::cout << "\n\t1 - Login\n\t2 - Cadastro\n";
@@ -119,7 +129,7 @@ bool menuPrincipal(){
     }
     if(escolha==1){
         //Verifica se o usuário pode efetuar login
-        if(verificaLogin())
+        if(verificaLogin(isAdmin))
             return true;
     }
     if(escolha==2){
