@@ -32,7 +32,7 @@ int Db_sys::salvar(std::string arq, std::string cont)
      return 0;
 }
 
-std::string Db_sys::ler(std::string arq, int f_size)
+std::string Db_sys::ler(std::string arq, int f_size=0)
 {
     int cx = 0;
     char cq = 0;
