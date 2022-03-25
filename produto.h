@@ -15,8 +15,8 @@ private:
 public:
     //Construtor
     Produto();
-    Produto(int id, double preco, int quantidadem);
-    Produto(int id, double preco, int quantidadem, std::string marca, std::string descricao);
+    Produto(int id, double preco, int quantidade);
+    Produto(int id, double preco, int quantidade, std::string marca, std::string descricao);
     virtual void imprimirProduto();     // exibe informações do produto, será sobrescrita nas subclasses
 
     //Gets
