@@ -10,6 +10,8 @@
 
 int main()
 {
+    std::cout << "\x1b[1;7m" << '\r';
+    system("clear");
     bool isAdmin = false;
     //Início do programa
     //chama a função de Menu Principal enquanto o login não for concedido.
