@@ -7,9 +7,12 @@
 #include "includes.h"
 #include "Administrador.h"
 #include "Cliente.h"
+#include <locale.h>
+
 
 int main()
 {
+   
     std::cout << "\x1b[1;7m" << '\r';
     system("clear");
     bool isAdmin = false;
@@ -18,7 +21,7 @@ int main()
     imprimeASCII();
     try {
         while (true) {
-            if (menuPrincipal(isAdmin))
+            if (menuPrincipal(isAdmin));
                 break;
         }
     }
@@ -27,6 +30,9 @@ int main()
         return 1;
     }
     if (isAdmin) {
+        
+        Estoque::Criar_arquivo_estoque();
+        Estoque::Ler_arquivo_estoque();
         Administrador ad = Administrador("admin",12,0);
         ad.menuAdm();
     }
