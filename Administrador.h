@@ -14,7 +14,6 @@ class Administrador : public Usuario {
         void menuAdm();
         void adicionarProduto();
         void excluirProduto();                 
-        void relatorioDeVendas();
         void relatorioDeEstoque();
 };
 
