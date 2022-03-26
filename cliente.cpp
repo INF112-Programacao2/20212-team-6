@@ -46,8 +46,8 @@ void Cliente::setRemove(std::string remove) {
     this->remove = remove;
 }
 
-void Cliente::setSaldo(double saldo){
-    this->saldoEmConta=saldo-Carrinho.valor_total();
+void Cliente::setSaldo(double saldo) {
+    this->saldoEmConta = saldo - Carrinho.valor_total();
 }
 
 // MÉTODOS GET
@@ -83,7 +83,7 @@ std::string Cliente::getRemove() {
     return remove;
 }
 
-double Cliente::getSaldo(){
+double Cliente::getSaldo() {
     return saldoEmConta;
 }
 // MOSTRA DADOS DO CLIENTE NA TELA
@@ -100,7 +100,7 @@ void Cliente::exibirDados() {
 }
 //Aqui o cliente realiza uma nova compra
 void Cliente::meuCarrinho() {
-   
+
     do {
 
         std::cout << "____________MEU CARRINHO____________\n\n";
@@ -131,6 +131,7 @@ void Cliente::meuCarrinho() {
         }
         case 3:
         {
+            Carrinho.listar_produtos();
             std::cout << "Digite a posicao do item que deseja remover:\n";
             std::cin >> remove;
             Carrinho.remover_item(remove);
@@ -143,12 +144,12 @@ void Cliente::meuCarrinho() {
         }
         case 5:
         {
-            std::cout <<"\n Valor total: " << Carrinho.valor_total() << std::endl;
-            std::cout << "Valor total em conta é R$ " << getSaldo()<< std::endl;
-            if(getSaldo()<Carrinho.valor_total())
+            std::cout << "\n Valor total: " << Carrinho.valor_total() << std::endl;
+            std::cout << "Valor total em conta é R$ " << getSaldo() << std::endl;
+            if (getSaldo() < Carrinho.valor_total())
             {
-                std::cout <<"Infelizmente você nao tem saldo suficiente para realizar essa compra.\n";
-                std::cout <<"Se acredita que isso esteja errado, favor entrar em contato com um administrador (31 9999-9999).\n";
+                std::cout << "Infelizmente você nao tem saldo suficiente para realizar essa compra.\n";
+                std::cout << "Se acredita que isso esteja errado, favor entrar em contato com um administrador (31 9999-9999).\n";
                 break;
             }
             else
@@ -157,7 +158,7 @@ void Cliente::meuCarrinho() {
                 std::cout << "O valor restante em conta é R$ " << getSaldo() << std::endl;
                 Carrinho.limpar_carrinho();
             }
-        }   
+        }
         default:
             break;
         }
@@ -170,24 +171,24 @@ void Cliente::menuDoCliente()
         std::cout << "Bem vindo ao seu menu!\n";
         std::cout << "O que deseja fazer?\n";
         std::cout << "1) Visualizar meus dados\n";
-        std::cout << "2) Realizar compras!\n" ;
+        std::cout << "2) Realizar compras!\n";
         std::cout << "3) Sair\n";
         std::cin >> selecao;
 
         switch (selecao)
         {
-            case 1:
-            {
-                exibirDados();
-                break;
-            }
-            case 2:
-            {
-                meuCarrinho();
-                break;
-            }
-            default:
-                break;
+        case 1:
+        {
+            exibirDados();
+            break;
         }
-    }while(selecao<3);
+        case 2:
+        {
+            meuCarrinho();
+            break;
+        }
+        default:
+            break;
+        }
+    } while (selecao < 3);
 }
