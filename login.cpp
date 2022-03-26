@@ -5,6 +5,7 @@
 #include <fstream>
 #include "usuario.h"
 #include "administrador.h"
+#include <filesystem>
 
 
 void cadastraLogin(){
@@ -16,9 +17,9 @@ void cadastraLogin(){
     if(ponteiro_arquivo == NULL)
         throw std::invalid_argument("Arquivo não foi encontrado.");
     
-    std::cout << "Por favor, digite um nome de usuario.\n";
+    std::cout << "-> Por favor, digite um nome de usuario.\n";
     std::cin >> user;
-    std::cout << "Agora escolha a sua senha.\n";
+    std::cout << "-> Agora escolha a sua senha.\n";
     std::cin >> password;
 
     //Criptografia simples com base na Cifra de César
@@ -39,6 +40,12 @@ void cadastraLogin(){
 
 bool verificaLogin(bool& isAdmin){
     std::ifstream entrada("database.dat");
+    if(!entrada.is_open()){
+        std::cout << "__________________________\nCrie um cadastro antes de tentar fazer o login!\n";
+        entrada.close();
+        cadastraLogin();
+        return false;
+    }
     char login[65];
     // string que vai guardar temporariamente cada linha da database
     char linhatemp[65];
