@@ -121,6 +121,8 @@ void Cliente::meuCarrinho() {
         }
         case 3:
         {
+            std::cout << "Digite a posicao do item que deseja remover:\n";
+            std::cin >> remove;
             Carrinho.remover_item(remove);
             break;
         }

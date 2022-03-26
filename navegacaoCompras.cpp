@@ -78,13 +78,3 @@ Produto NavegacaoCompras::RetornaProdutoBuscado(int codigo)
 
     return *busca;
 }
-
-Produto NavegacaoCompras::RemocaoDaCompra()
-{
-    std::cout << "Digite o codigo do produto que deseja remover do carrinho\n";
-    std::cin >> codigo;
-
-    std::cout << listar.identificaDescricaoProduto(codigo) << std::endl;
-    return RetornaProdutoBuscado(codigo);
-    
-}
