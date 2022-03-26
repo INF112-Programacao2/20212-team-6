@@ -40,32 +40,40 @@ void Estoque::Criar_arquivo_estoque()
     std::string res = "";
 
     res += "10012|100|8|Celular|Motorola|1|8|8|100%";
-    res += "20013|1200|18|Televisao|LG|4|1080|34%";
+    res += "40013|1200|18|Televisao|LG|4|1080|34%";
     res += "30014|80|2|Fone|Sony|3|1|interno%";
-    res += "40015|2000|7|Laptop|Apple|2|12|16|100%";
+    res += "20015|2000|7|Laptop|Apple|2|12|16|100%";
 
     Db_sys::salvar("produtos", res);
+    
+    
 }
 
 void Estoque::Ler_arquivo_estoque()
 {
-    const int size = 4;
+    const int size =5;
     std::string d = Db_sys::ler("produtos",0);
     char b[1000] = {};
     char tem[1000] = {};
-    std::string hold[size] = {"","","",""};
+    int sizex = 0;
+    std::string hold[100] = {"","","",""};
     char* tk = nullptr;
-    Produto pd[size] = {};
+    Produto pd[100] = {};
     for (int a = 0;a < d.length();a++)
     {
+        if (d[a] == '%')
+        {
+            sizex++;
+        }
         b[a] = d[a];
     }
     hold[0] = strtok_r(b,"%",&tk);
-    for (int x = 1;x < size;x++)
+    for (int x = 1;x < sizex;x++)
     {
         hold[x] = strtok_r(NULL, "%", &tk);
     }
 
+    //sizex--;
     double pdx=0;
     int qt = 0;
     int idx = 0;
@@ -79,7 +87,7 @@ void Estoque::Ler_arquivo_estoque()
     //Produto* prod = nullptr;
     
 
-    for (int q = 0;q < size;q++)
+    for (int q = 0;q < sizex;q++)
     {
         hold[q].copy(tem, hold[q].length() + 1);
         tem[hold[q].size() + 1] = '\0';
