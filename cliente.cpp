@@ -155,6 +155,7 @@ void Cliente::meuCarrinho() {
             {
                 setSaldo(saldoEmConta);
                 std::cout << "O valor restante em conta é R$ " << getSaldo() << std::endl;
+                Carrinho.limpar_carrinho();
             }
         }   
         default:
