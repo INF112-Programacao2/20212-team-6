@@ -6,6 +6,7 @@
 #include <exception>
 #include "Pedido.h"
 #include "Produto.h"
+#include "Estoque.h"
 
 int Pedido::ph_id = -8192;
 Pedido::Pedido()
@@ -45,6 +46,8 @@ void Pedido::add_produto(Produto& p)
 		}
 		
 	}
+	Estoque::setQtdDeProdutos(1, 2);
+	Estoque::setValorTotalDoEstoque(1,p.getPreco(),2);
 }
 
 double Pedido::valor_total()
@@ -119,6 +122,8 @@ int Pedido::remover_item(std::string in)
 				//add_produto(temp[d]);
 				carrinho[d] = temp[d];
 				quantidade[d] = temp_q[d];
+				Estoque::setQtdDeProdutos(1, 1);
+				Estoque::setValorTotalDoEstoque(1, carrinho[d].getPreco(), 1);
 			}
 
 		}
@@ -141,10 +146,17 @@ int Pedido::remover_item(std::string in)
 
 void Pedido::listar_produtos()
 {
+	std::cout << std::endl;
+	std::cout << "-----------------------------" << std::endl;
+	std::cout << std::endl;
 	for (int c = 0;c < p_size;c++)
 	{
-		std::cout << carrinho[c].getPreco() << " x"  << quantidade[c] << std::endl;
+		std::cout << c+1 << "- " << carrinho[c].getDescricao() << " R$" << carrinho[c].getPreco() << " x" << quantidade[c] << std::endl;
+		std::cout << std::endl;
 	}
+	std::cout << std::endl;
+	std::cout << "-----------------------------" << std::endl;
+	std::cout << std::endl;
 }
 
 Pedido::~Pedido()
