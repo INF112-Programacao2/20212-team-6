@@ -1,4 +1,6 @@
-#pragma once
+#ifndef PEDIDO_H
+#define PEDIDO_H
+
 #include "Produto.h"
 
 class Pedido
@@ -22,3 +24,5 @@ class Pedido
 	private:
 
 };
+
+#endif
