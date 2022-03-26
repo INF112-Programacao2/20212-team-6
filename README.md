@@ -1,6 +1,7 @@
 <h1 align="center">Trabalho Final da Disciplina INF 112 - Programação II</h1>
 <p align="center">Repositório do grupo 6 para o projeto final da disciplina de Programação II da Universidade Federal de Viçosa</p>
 <p align="center">
+ ![loja](https://tm.ibxk.com.br/2014/07/04/04113037868358.jpg)
  <a>Objetivo: O projeto simula um sistema e-commerce de pequeno porte de uma loja de produtos eletrônicos.</a>
 <p align="left">
   <h2>Autores do projeto</h2>
@@ -9,7 +10,7 @@
     <li>Bianca Dias</li>
     <li>Daniel</li>
     <li>Gabriel</li>
-    <li>![Hícaro](https://github.com/hicarop4)</li>
+    <li>Hícaro</li>
   </ul>
 </p>
 <h2>Como funciona?</h2>
