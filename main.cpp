@@ -40,7 +40,7 @@ int main()
         Cliente ct = Cliente("cliente",12,0,"",1);
         Estoque::Criar_arquivo_estoque();
         Estoque::Ler_arquivo_estoque();
-        ct.meuCarrinho();
+        ct.menuDoCliente();
     }
     return 0;
 }
