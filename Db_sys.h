@@ -10,6 +10,7 @@ class Db_sys
 	public:
 		static int salvar(std::string arq, std::string cont);
 		static std::string ler(std::string arq, int f_size);
+		static int add_salvar(std::string arq, std::string cont);
 	
 	
 
