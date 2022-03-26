@@ -5,6 +5,7 @@
 #include "Pedido.h"
 #include "produto.h"
 #include "navegacaoCompras.h"
+#include "Db_sys.h"
 
 class Cliente : public Usuario {
     private: 

@@ -100,7 +100,7 @@ void Cliente::exibirDados() {
 }
 //Aqui o cliente realiza uma nova compra
 void Cliente::meuCarrinho() {
-
+   
     do {
 
         std::cout << "____________MEU CARRINHO____________\n\n";
@@ -161,8 +161,32 @@ void Cliente::meuCarrinho() {
             break;
         }
     } while (selecao < 6);
+}
+void Cliente::menuDoCliente()
+{
+    do
+    {
+        std::cout << "Bem vindo ao seu menu!\n";
+        std::cout << "O que deseja fazer?\n";
+        std::cout << "1) Visualizar meus dados\n";
+        std::cout << "2) Realizar compras!\n" ;
+        std::cout << "3) Sair\n";
+        std::cin >> selecao;
 
-
-
-
+        switch (selecao)
+        {
+            case 1:
+            {
+                exibirDados();
+                break;
+            }
+            case 2:
+            {
+                meuCarrinho();
+                break;
+            }
+            default:
+                break;
+        }
+    }while(selecao<3);
 }

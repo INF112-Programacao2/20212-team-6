@@ -12,6 +12,7 @@ void NavegacaoCompras::imprimirProdutosDisponiveis()
     std::cout << "\t(2) NOTEBOOKS\n";
     std::cout << "\t(3) FONES DE OUVIDO\n";
     std::cout << "\t(4) TELEVISORES\n";
+    std::cout << "\t Se deseja voltar digite 5\n";
     std::cout << std::endl;
 
     std::cin >> opc;
@@ -38,6 +39,8 @@ void NavegacaoCompras::imprimirProdutosDisponiveis()
             listar.imprimeProdutoEmEstoque(40000, 49999);         // exibe de acordo com intervalo referente ao produto
             break;
         }
+        case 5:
+            break;
         default:
         {
             std::cout << "\tOPÇÃO INVÁLIDA! Selecione uma das opções DO MENU: ";
@@ -49,12 +52,27 @@ void NavegacaoCompras::imprimirProdutosDisponiveis()
 
 Produto NavegacaoCompras::selecaoDeCompra()
 {
+    //se o cliente quis voltar, ja sai direto desse menu
+    Produto invalido (-8192, 0 ,199);
+    if(opc == 5)
+    {
+       return invalido; 
+    }
     std::cout << "Selecione o produto que deseja comprar:\n";
     std::cout << "Digite o codigo do produto desejado\n";
+    std::cout << "Caso queira voltar, digite 1\n";
     std::cin >> codigo;
 
+    if(codigo == 1)
+    {
+        return invalido;
+    }
+
     if(listar.identificaProduto(codigo) == false)
+    {
         std::cout << "Sinto muito. O produto acabou em nosso estoque mas fiquei de olho que em breve teremos mais!\n";
+        return invalido;
+    }
     else
     {
         std::cout << listar.identificaDescricaoProduto(codigo) << std::endl;
