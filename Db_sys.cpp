@@ -9,8 +9,11 @@
 #include <ios>
 #include "Db_sys.h"
 
+//Valor "chave" da cifra usada na string
 int Db_sys::cy = 13;
 
+
+//Escreve em um arquivo "arq.dat",cont e sobscreve
 int Db_sys::salvar(std::string arq, std::string cont)
 {
     
@@ -26,7 +29,7 @@ int Db_sys::salvar(std::string arq, std::string cont)
 
     std::ofstream wf(arq + ".dat", std::ios::out | std::ios::binary);
     if (!wf) {
-        std::cout << "Cannot open file1!" << std::endl;
+        std::cout << "Nao foi possivel criar o arquivo!" << std::endl;
         return 1;
     }
     wf.write(cont.c_str(), cont.size());
@@ -34,6 +37,7 @@ int Db_sys::salvar(std::string arq, std::string cont)
     return 0;
 }
 
+//Escreve em um arquivo "arq.dat" cont, cont eh adicionado ao final do conteudo ja existente
 int Db_sys::add_salvar(std::string arq, std::string cont)
 {
 
@@ -50,6 +54,8 @@ int Db_sys::add_salvar(std::string arq, std::string cont)
     return 0;
 }
 
+
+//Le o arquivo arq, e remove a cifra
 std::string Db_sys::ler(std::string arq, int f_size=0)
 {
     int cx = 0;
@@ -59,12 +65,12 @@ std::string Db_sys::ler(std::string arq, int f_size=0)
    
     std::ifstream rf(arq + ".dat", std::ios::in | std::ios::binary);
     if (!rf) {
-        std::cout << "Cannot open file!" << std::endl;
+        std::cout << "nao foi posivel abrir o arquivo!" << std::endl;
         
     }
     std::getline(rf,val);
    
-    //std::cout << "cy " << cy << std::endl;
+    
 
     for (int c = 0;c < val.length();c++)
     {
