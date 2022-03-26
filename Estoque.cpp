@@ -100,6 +100,8 @@ void Estoque::Ler_arquivo_estoque()
                 Produto* prod = new DispMovel(idx,pdx,qt,mar,des,temp1,temp2,temp3);
                 prod->setEmEstoque();
                 Estoque1.push_back(prod);
+                setValorTotalDoEstoque(prod->getQuantidade(), prod->getPreco(), 1);
+                setQtdDeProdutos(prod->getQuantidade(), 1);
 
                 break;
             }
@@ -112,6 +114,8 @@ void Estoque::Ler_arquivo_estoque()
                 Produto* prod = new Notebook(idx, pdx, qt, mar, des, temp1, temp2, temp3);
                 prod->setEmEstoque();
                 Estoque1.push_back(prod);
+                setValorTotalDoEstoque(prod->getQuantidade(), prod->getPreco(), 1);
+                setQtdDeProdutos(prod->getQuantidade(), 1);
 
                 break;
             }
@@ -123,6 +127,8 @@ void Estoque::Ler_arquivo_estoque()
                 Produto* prod = new FoneDeOuvido(idx, pdx, qt, mar, des, temq,tm);
                 prod->setEmEstoque();
                 Estoque1.push_back(prod);
+                setValorTotalDoEstoque(prod->getQuantidade(), prod->getPreco(), 1);
+                setQtdDeProdutos(prod->getQuantidade(), 1);
 
                 break;
             }
@@ -134,6 +140,8 @@ void Estoque::Ler_arquivo_estoque()
                 Produto* prod = new Televisores(idx, pdx, qt, mar, des, temp1,temp2);
                 prod->setEmEstoque();
                 Estoque1.push_back(prod);
+                setValorTotalDoEstoque(prod->getQuantidade(),prod->getPreco(),1);
+                setQtdDeProdutos(prod->getQuantidade(),1);
 
                 break;
             }
@@ -142,6 +150,7 @@ void Estoque::Ler_arquivo_estoque()
                 break;
         }
     }
+    
     
 
 
