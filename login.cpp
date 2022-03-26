@@ -85,13 +85,13 @@ bool verificaLogin(bool& isAdmin){
         }
         //Caso encontre um login válido, o programa retorna true e é liberado para o usuário.
         if(strcmp(linhatemp,login)==0){
-            std::cout << "Acesso garantido!\n";
+            std::cout << "\nACESSO GARANTIDO!\n\n";
             return true;
         }
         if(entrada.eof())
             break;
     }
-    std::cout << "Usuário ou senha incorretos.\n";
+    std::cout << "____________________________\nUsuário ou senha incorretos.\n";
     return false;
 }
 
@@ -117,15 +117,16 @@ void imprimeASCII(){
 bool menuPrincipal(bool& isAdmin){
     int escolha;
     //Fazendo o usuário escolher se deseja cadastrar uma nova conta ou efetuar login
-    std::cout << "\n\t1 - Login\n\t2 - Cadastro\n";
+    std::cout << "\n\t1 - Login\n\t2 - Cadastro\n\t3 - Sair\n";
 
     std::cout << "\nSelecione uma opção: "; 
     std::cin >> escolha;
     if(std::cin.fail()){
-        throw std::invalid_argument("Digite um número.\n");
+        throw std::invalid_argument("-> Digite um número.\n");
     }
-    if(escolha > 2 || escolha < 1){
-        throw std::invalid_argument("Escolha uma opção válida.\n");
+    if(escolha > 3 || escolha < 1){
+        std::cout << "-> Selecione uma opção válida.\n";
+        return false;
     }
     if(escolha==1){
         //Verifica se o usuário pode efetuar login
@@ -135,6 +136,11 @@ bool menuPrincipal(bool& isAdmin){
     if(escolha==2){
         //Cadastra o login de usuário
         cadastraLogin();
+    }
+    if(escolha==3){
+        //Fecha o programa
+        std::cout << "-> Adeus!\n";
+        exit(1);
     }
     return false;
 }
