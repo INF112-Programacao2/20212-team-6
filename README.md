@@ -9,7 +9,7 @@
     <li>Bianca Dias</li>
     <li>Daniel</li>
     <li>Gabriel</li>
-    <li>[Hícaro](https://github.com/hicarop4)</li>
+    [Hícaro](https://github.com/hicarop4)
   </ul>
 </p>
 <h2>Como funciona?</h2>
