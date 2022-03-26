@@ -143,7 +143,7 @@ void Cliente::meuCarrinho() {
         }
         case 5:
         {
-            std::cout <<"\n Valor total: " << Carrinho.valor_total();
+            std::cout <<"\n Valor total: " << Carrinho.valor_total() << std::endl;
             std::cout << "Valor total em conta é R$ " << getSaldo()<< std::endl;
             if(getSaldo()<Carrinho.valor_total())
             {
@@ -160,7 +160,7 @@ void Cliente::meuCarrinho() {
         default:
             break;
         }
-    } while (selecao < 7);
+    } while (selecao < 6);
 
 
 
