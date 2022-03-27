@@ -25,6 +25,7 @@
   </ol>
 <h2>Se for um cliente</h2>
 <p> </p>
+<li>Terá acesso aos seus dados cadastrados</li>
 <h2>Se for o administrador</h2>
 <ul>
  <li>Terá acesso a um menu com as modificações que o administrador pode fazer no sistema, relativas ao gerenciamento do estoque.</li>
