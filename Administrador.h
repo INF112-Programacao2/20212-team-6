@@ -4,7 +4,6 @@
 #include <string>
 
 #include "usuario.h"
-#include "Produto.h"
 #include "Estoque.h"
 
 class Administrador : public Usuario {
