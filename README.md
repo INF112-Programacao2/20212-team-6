@@ -27,7 +27,8 @@
 <p> </p>
 <li>Terá acesso a informações e possibilidades em compras</li>
 <ol>
-<li>Terá acesso aos seus dados cadastrados</li>
+ <li>Terá acesso aos seus dados cadastrados</li>
+ <li>Poderá navegar pelos produtos disponíveis e, quem sabe, realizar uma boa compra em nosso e-commerce!<\li>
 <h2>Se for o administrador</h2>
 <ul>
  <li>Terá acesso a um menu com as modificações que o administrador pode fazer no sistema, relativas ao gerenciamento do estoque.</li>
