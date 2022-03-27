@@ -39,10 +39,26 @@ void Estoque::Criar_arquivo_estoque()
 {
     std::string res = "";
 
-    res += "10012|100|8|Celular|Motorola|1|8|8|100%";
-    res += "40013|1200|18|Televisao|LG|4|1080|34%";
-    res += "30014|80|2|Fone|Sony|3|1|interno%";
-    res += "20015|2000|7|Laptop|Apple|2|12|16|100%";
+    res += "10012|1149|8|Smartphone Moto G20|Motorola|1|6|4|64%";
+    res += "10013|3894|8|iPhone 11 Apple|Apple|1|6|4|64%";
+    res += "10014|609|8|Smartphone Samsung Galaxy A03|Samsung|1|6|2|32%";
+    res += "10015|999|8|Smartphone Samsung Galaxy A12|Samsung|1|6|4|64%";
+    
+    res += "40013|1500|18|Samsung Tizen HD 32T4300 2020|Samsung|4|1080|32%";
+    res += "40014|1200|18|Smart TV AOC Roku LED|Roku|4|1080|32%";
+    res += "40015|1671|18|Samsung Smart TV LED|Samsung|4|1080|40%";
+    res += "40016|949|18|Smart TV LG 24 LED|LG|4|1080|24%";
+    
+    res += "30014|399|2|Fone de Ouvido Samsung Galaxy Buds|Samsung|3|0|interno%";
+    res += "30015|150|2|Fone de Ouvido Philips TAUH202|Philips|3|0|externo%";
+    res += "30016|215|2|Fone de Ouvido Bluetooth 5,0 JBL Tune 510|Jbl|3|0|interno%";
+    res += "30017|50|2|Fone Ouvido Sem Fio Bluetooth|P47|3|0|externo%";
+    
+   
+    res += "20015|2777|7|Notebook Lenovo Ultrafino Ideapad|Lenovo|2|15|4|256%";
+    res += "20016|2222|7|Notebook Samsung Intel Celeron-6305|Samsung|2|15|4|500%";
+    res += "20017|1647|7|Notebook Compaq 420 Intel Pentium-N3700|Compaq|2|14|4|120%";
+    res += "20018|2777|7|Notebook Dell Inspiron|Dell|2|15|4|128%";
 
     Db_sys::salvar("produtos", res);
     
