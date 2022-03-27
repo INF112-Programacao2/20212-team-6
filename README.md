@@ -1,7 +1,4 @@
-<body bgcolor="FFFFFF">
- <div style="text-align:center">
- <img class="img"src="https://tm.ibxk.com.br/2014/07/04/04113037868358.jpg" width="900" height="450">
-<div>
+![loja](https://tm.ibxk.com.br/2014/07/04/04113037868358.jpg)
 <h1 align="center">Trabalho Final da Disciplina INF 112 - Programação II</h1>
 <p align="center">Repositório do grupo 6 para o projeto final da disciplina de Programação II da Universidade Federal de Viçosa</p>
 <p align="center">
@@ -11,7 +8,7 @@
   <ul> 
     <li>Ana Laura  - <a href="https://github.com/analauratvrs" target="_blank">@analauratvrs</a></li>
     <li>Bianca Dias</li>
-    <li>Daniel</li>
+    <li>Daniel - <a href="https://github.com/danierumr" target="_blank">@danierumr</a> </li>
     <li>Gabriel Campos - <a href="https://github.com/gabrielfernandesufv" target="_blank">@gabrielfernandesufv</a></li>
     <li>Hícaro Vitor - <a href="https://github.com/hicarop4" target="_blank">@hicarop4</a></li>
   </ul>
@@ -39,4 +36,3 @@
  </ol>
 </ul>
 </p>
-<body>
