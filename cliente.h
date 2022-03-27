@@ -7,7 +7,8 @@
 #include "navegacaoCompras.h"
 #include "Db_sys.h"
 
-class Cliente : public Usuario {
+class Cliente : public Usuario 
+{
     private: 
         std::string endereco;
         unsigned long long int telefone;

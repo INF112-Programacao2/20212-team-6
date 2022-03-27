@@ -14,7 +14,8 @@
 // 40000 - 49999: televisores
 // alguns métodos terão suas operações baseadas nesses intervalos
 
-class Estoque {
+class Estoque 
+{
 protected:
     static double valorTotalDoEstoque;
     static int qtdDeProdutos;

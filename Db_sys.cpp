@@ -68,18 +68,11 @@ std::string Db_sys::ler(std::string arq, int f_size=0)
         
     }
     std::getline(rf,val);
-   
-    
 
     for (int c = 0;c < val.length();c++)
     {
         val[c] -= cy;
     }
-
-    
-
-    
-
 
     return val;
 }

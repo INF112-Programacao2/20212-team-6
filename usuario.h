@@ -11,8 +11,6 @@ class Usuario
     public:
         Usuario(std::string nome, unsigned long long int cpf, int id_usuario);
         std::string get_nome();
-
-
 };
 
 #endif
