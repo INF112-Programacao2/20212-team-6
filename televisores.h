@@ -3,7 +3,8 @@
 
 #include "produto.h"
 
-class Televisores : public Produto {
+class Televisores : public Produto 
+{
 private:
     int _tela;
     int _resolucao;

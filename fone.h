@@ -3,7 +3,8 @@
 
 #include "produto.h"
 
-class FoneDeOuvido : public Produto {
+class FoneDeOuvido : public Produto 
+{
 private:
     bool _bt;
     std::string _tipo;

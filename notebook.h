@@ -3,7 +3,8 @@
 
 #include "produto.h"
 
-class Notebook : public Produto {
+class Notebook : public Produto 
+{
 private:
     int _tela;
     int _ram;

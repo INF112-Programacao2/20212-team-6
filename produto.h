@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-class Produto {
+class Produto 
+{
 private:
     int _id;
     double _preco;

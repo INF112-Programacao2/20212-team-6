@@ -3,7 +3,8 @@
 
 #include "produto.h"
 
-class DispMovel : public Produto {
+class DispMovel : public Produto 
+{
 private:
     int _tela;
     int _ram;
