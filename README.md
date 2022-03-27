@@ -30,7 +30,7 @@
  <li>Terá acesso aos seus dados cadastrados</li>
  <li>Poderá navegar pelos produtos disponíveis e, quem sabe, realizar uma boa compra em nosso e-commerce!</li>
  <li>Assim poderá adicionar produtos no carrinho, visualizá-los e ver também o valor total que sua compra vai dar</li>
- <li>Poderá também remover produtos que já não te interessam mais do carrinho</li>
+ <li>Poderá também remover do carrinho, produtos que já não te interessam mais</li>
  <li>E, por fim, concluir sua compra, abatendo o valor do crédito fornecido com exclusividade pela loja!</li>
 <h2>Se for o administrador</h2>
 <ul>
