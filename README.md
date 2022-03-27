@@ -6,7 +6,7 @@
 <p align="left">
   <h2>Autores do projeto</h2>
   <ul> 
- <li>Ana Laura  - <a href="https://github.com/analauratvrs">@analauratvrs</a></li>
+ <li>Ana Laura  - <a href="https://github.com/analauratvrs" target="_blank">@analauratvrs</a></li>
     <li>Bianca Dias</li>
     <li>Daniel</li>
     <li>Gabriel</li>
