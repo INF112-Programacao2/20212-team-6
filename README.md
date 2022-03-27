@@ -7,7 +7,7 @@
   <h2>Autores do projeto</h2>
   <ul> 
     <li>Ana Laura  - <a href="https://github.com/analauratvrs" target="_blank">@analauratvrs</a></li>
-    <li>Bianca Dias</li>
+ <li>Bianca Dias - <a href="https://github.com/BiancaDias" target="_blank">@BiancaDias</a></li>
     <li>Daniel - <a href="https://github.com/danierumr" target="_blank">@danierumr</a> </li>
     <li>Gabriel Campos - <a href="https://github.com/gabrielfernandesufv" target="_blank">@gabrielfernandesufv</a></li>
     <li>Hícaro Vitor - <a href="https://github.com/hicarop4" target="_blank">@hicarop4</a></li>
