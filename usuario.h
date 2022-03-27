@@ -6,10 +6,10 @@ class Usuario
 {
     protected:
         std::string _nome;
-        long int _cpf;
+        unsigned long long int _cpf;
         int _id_usuario;
     public:
-        Usuario(std::string nome, int cpf, int id_usuario);
+        Usuario(std::string nome, unsigned long long int cpf, int id_usuario);
         std::string get_nome();
 
 

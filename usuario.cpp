@@ -1,6 +1,6 @@
 #include "usuario.h"
 
-Usuario::Usuario(std::string nome, int cpf, int id_usuario)
+Usuario::Usuario(std::string nome, unsigned long long int cpf, int id_usuario)
 {
     _nome = nome;
     _cpf = cpf;

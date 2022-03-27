@@ -4,6 +4,7 @@
 #include "Pedido.h"
 #include "produto.h"
 
+
 Cliente::Cliente(std::string nome, unsigned long long int cpf, int id_usuario, std::string endereco, unsigned long long int telefone)
     : Usuario(nome, cpf, id_usuario) {
     this->endereco = endereco;
@@ -93,7 +94,6 @@ void Cliente::exibirDados() {
     std::cout << "DADOS DO CLIENTE\n";
     std::cout << "NOME: " << getNome() << std::endl;
     std::cout << "CPF: " << getCPF() << std::endl;
-    std::cout << "ID de usuario: " << getID() << std::endl;
     std::cout << "ENDEREÇO: " << getEndereco() << std::endl;
     std::cout << "TELEFONE: " << getTelefone() << std::endl;
     std::cout << "-------------------------------------------\n";
@@ -103,15 +103,15 @@ void Cliente::meuCarrinho() {
 
     do {
 
-        std::cout << "____________MEU CARRINHO____________\n\n";
-        std::cout << "Prossiga selecionando uma das seguintes opcoes:\n";
-        std::cout << "1) Visualizar meu carrinho\n";
-        std::cout << "2) Adicionar itens\n";
-        std::cout << "3) Remover itens\n";
-        std::cout << "4) Limpar carrinho\n";
-        std::cout << "5) Concluir compra\n";
-        std::cout << "_____________________________________\n";
-        std::cout << "Se deseja sair, digite 6\n";
+        std::cout << "\t____________MEU CARRINHO____________\n\n";
+        std::cout << "\tProssiga selecionando uma das seguintes opcoes:\n";
+        std::cout << "\t1) Visualizar meu carrinho\n";
+        std::cout << "\t2) Adicionar itens\n";
+        std::cout << "\t3) Remover itens\n";
+        std::cout << "\t4) Limpar carrinho\n";
+        std::cout << "\t5) Concluir compra\n";
+        std::cout << "\t_____________________________________\n";
+        std::cout << "\tSe deseja sair, digite 6\n";
         std::cin >> selecao;
 
         switch (selecao)
