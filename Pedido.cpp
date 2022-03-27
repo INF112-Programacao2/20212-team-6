@@ -94,7 +94,7 @@ int Pedido::remover_item(std::string in)
 		
 		if (inx > p_size -1)
 		{
-			std::cout << "\x1b[0;91m Valor maior que o numero de produtos no carrinho\x1b[0m" << std::endl;
+			std::cout << " Valor maior que o numero de produtos no carrinho" << std::endl;
 			return 1;
 		}
 
@@ -136,7 +136,7 @@ int Pedido::remover_item(std::string in)
 	}
 
 	else {
-		std::cout << "\x1b[0;91mValor eh zero ou menor\x1b[0m" << std::endl;
+		std::cout << "Valor eh zero ou menor" << std::endl;
 		return 2;
 	}
 
