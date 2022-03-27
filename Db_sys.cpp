@@ -1,7 +1,3 @@
-#ifndef DB_SYS_H
-#define DB_SYS_H
-
-
 #include <cstring>
 #include <algorithm>
 #include <fstream>
