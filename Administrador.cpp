@@ -127,8 +127,7 @@ void Administrador::excluirProduto() {
 
 void Administrador::menuAdm() {
     int opcao = -1;
-    std::string op = "";
-    while (!getchar()) {            // haverão mais opcoes conforme a necessidade de mais operações
+    while (opcao != 4) {            // haverão mais opcoes conforme a necessidade de mais operações
         inicioMenu:
         std::cout << std::endl;
         std::cout << "________________________ MENU DO ADMINISTRADOR _______________________\n";
@@ -171,8 +170,8 @@ void Administrador::menuAdm() {
                 relatorioDeEstoque();
                 break;
             case 4:
-                std::cout << "Pressione ENTER para encerrar a sessão";
-                getchar();
+                std::cout << "FIM DA SESSÃO!\n";
+                break;
             default:
                 std::cout << "Opção invalida! Selecione uma das opções DO MENU\n";
                 goto inicioMenu;            // vai para o início do menu
