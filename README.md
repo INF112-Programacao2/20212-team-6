@@ -1,5 +1,5 @@
-<body background-color="white">
-![loja](https://tm.ibxk.com.br/2014/07/04/04113037868358.jpg)
+<body bgcolor="FFFFFF">
+<img src="https://tm.ibxk.com.br/2014/07/04/04113037868358.jpg" width="300" height="50">
 <h1 align="center">Trabalho Final da Disciplina INF 112 - Programação II</h1>
 <p align="center">Repositório do grupo 6 para o projeto final da disciplina de Programação II da Universidade Federal de Viçosa</p>
 <p align="center">
