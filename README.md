@@ -24,7 +24,6 @@
    <li>Se for um usuário do tipo cliente, terá acesso à parte de compra de produtos.</li>
   </ol>
 <h2>Se for um cliente</h2>
-<p> </p>
 <li>Terá acesso a informações e possibilidades em compras</li>
 <ol>
  <li>Terá acesso aos seus dados cadastrados</li>
@@ -32,8 +31,8 @@
  <li>Assim poderá adicionar produtos no carrinho, visualizá-los e ver também o valor total que sua compra vai dar</li>
  <li>Poderá também remover do carrinho, produtos que já não te interessam mais</li>
  <li>E, por fim, concluir sua compra, abatendo o valor do crédito fornecido com exclusividade pela loja!</li>
+ </ol>
 <h2>Se for o administrador</h2>
-<ul>
  <li>Terá acesso a um menu com as modificações que o administrador pode fazer no sistema, relativas ao gerenciamento do estoque.</li>
  <ol>
   <li>Inclusão de produtos ao estoque</li>
@@ -41,5 +40,4 @@
   <li>Consultar produtos disponíveis em estoque</li>
   <li>Encerramento da sessão como administrador</li>
  </ol>
-</ul>
 </p>
