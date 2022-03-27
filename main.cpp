@@ -21,7 +21,7 @@ int main()
     imprimeASCII();
     try {
         while (true) {
-            if (menuPrincipal(isAdmin));
+            if (menuPrincipal(isAdmin))
                 break;
         }
     }
