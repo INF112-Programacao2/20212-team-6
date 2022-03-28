@@ -38,20 +38,40 @@ int main()
     }
     else {
         std::string nome, endereco;
-        long long int telefone = -1, cpf = -1;
+        unsigned long long  int telefone = 0, cpf = 0;
         std::string cf="", tl = "";
+        std::string cft = "", tlt = "";
         //Fornece as informacoes para criacao do cliente
         std::cout << "\tVamos completar o seu cadastro\n";
         std::cout << "\tPara comecar, digite seu nome completo:\n";
         std::cin.ignore();
         getline(std::cin, nome);
-        while (cpf == -1)
+
+        
+       
+        while (cpf == 0)
         {
+            
             std::cout << "\tDigite seu cpf: (somente numeros)\n";
-            std::cin >> cf;
+            //std::cin.ignore(0);
+            
+            getline(std::cin, cf);
+            cf.erase(std::remove(cf.begin(), cf.end(), ' '), cf.end());
+            
+
+            for (int x = 0;x < cf.length();x++)
+            {
+                if (!isdigit(cf[x]))
+                {
+                    cf[0] = 'a';
+                    break;
+                }
+            }
+
+            
             try
             {
-                cpf = std::stoll(cf);
+                cpf = (unsigned long long  int)std::stoll(cf);
             }
             catch (std::invalid_argument e)
             {
@@ -59,15 +79,31 @@ int main()
             }
             
             
+            
         }
         std::cout << "\tDigite seu endereco e aperte 'enter' somente quando terminar: \n";
         std::cin.ignore();
         getline(std::cin, endereco);
         
-        while (telefone == -1)
+        while (telefone == 0)
         {
             std::cout << "\tPara terminar, digite seu telefone: (somente numeros)\n";
-            std::cin >> tl;
+            //std::cin.ignore(0);
+            
+
+            getline(std::cin, tl);
+            tl.erase(std::remove(tl.begin(), tl.end(), ' '), tl.end());
+
+
+            for (int x = 0;x < tl.length();x++)
+            {
+                if (!isdigit(tl[x]))
+                {
+                    tl[0] = 'a';
+                    break;
+                }
+            }
+            
             try
             {
                 telefone = std::stoll(tl);
