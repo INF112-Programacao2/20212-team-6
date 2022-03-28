@@ -11,6 +11,7 @@
 int Pedido::ph_id = -8192;
 Pedido::Pedido()
 {
+	//std::cout << sizeof(quantidade) << std::endl;
 	for (int x = 0;x < size;x++)
 	{
 		quantidade[x] = 0;
@@ -33,6 +34,7 @@ void Pedido::add_produto(Produto& p)
 			if (carrinho[x].getID() == p.getID())
 			{
 				quantidade[x] ++;
+				p.setQuantidade(p.getQuantidade()-1);
 				break;
 			}
 			if (carrinho[x].getID() == Pedido::ph_id)
@@ -40,6 +42,7 @@ void Pedido::add_produto(Produto& p)
 				carrinho[x] = p;
 				quantidade[x] = 1;
 				p_size++;
+				p.setQuantidade(p.getQuantidade() - 1);
 				break;
 			}
 		}
@@ -54,6 +57,7 @@ double Pedido::valor_total()
 	double res = 0;
 	for (int x = 0;x < size;x++)
 	{
+		//std::cout << "$: " << carrinho[x].getPreco() << " x" << quantidade[x] << std::endl;
 		res += (carrinho[x].getPreco() * quantidade[x]);
 	}
 
@@ -67,7 +71,11 @@ void Pedido::limpar_carrinho()
 {
 	for (int x = 0;x < p_size;x++)
 	{
-		quantidade[x] = 0;
+		carrinho[x].setQuantidade(carrinho[x].getQuantidade() + quantidade[x]);
+		Estoque::setQtdDeProdutos(1, 2);
+		Estoque::setQtdDeProdutos(quantidade[x], 1);
+		Estoque::setValorTotalDoEstoque(quantidade[x], carrinho[x].getPreco(), 1);
+		quantidade[x] = 0;	
 		carrinho[x] = Produto(ph_id, 0, 199);
 
 	}
@@ -85,14 +93,14 @@ int Pedido::remover_item(std::string in)
 	{
 		nm = in;
 	}
-
+	//std::cout << inx << std::endl;
 	inx--;
 	if (inx >= 0)
 	{
 		
 		if (inx > p_size -1)
 		{
-			std::cout << " Valor maior que o numero de produtos no carrinho" << std::endl;
+			std::cout << "\x1b[0;91m Valor maior que o numero de produtos no carrinho\x1b[0m" << std::endl;
 			return 1;
 		}
 
@@ -134,7 +142,7 @@ int Pedido::remover_item(std::string in)
 	}
 
 	else {
-		std::cout << "Valor eh zero ou menor" << std::endl;
+		std::cout << "\x1b[0;91mValor eh zero ou menor\x1b[0m" << std::endl;
 		return 2;
 	}
 
