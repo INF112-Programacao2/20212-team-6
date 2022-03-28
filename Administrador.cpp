@@ -127,6 +127,7 @@ void Administrador::excluirProduto() {
 
 void Administrador::menuAdm() {
     int opcao = -1;
+    std::string op;
     while (opcao != 4) {            // haverão mais opcoes conforme a necessidade de mais operações
         inicioMenu:
         std::cout << std::endl;
@@ -143,14 +144,14 @@ void Administrador::menuAdm() {
         std::cout << "______________________________________________________________________\n";
         std::cout << std::endl;
         std::cout << "\tSelecione uma opção: ";
-        std::cin >> opcao;
+        std::cin >> op;
         std::cout << std::endl;
 
         system("clear"); // limpa a tela do terminal
 
         //  ações a serem executadas de acordo com a escolha do usuario
         try {
-
+             opcao=std::stoi(op);
         }
         catch (std::invalid_argument e)
         {
