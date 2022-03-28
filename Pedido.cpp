@@ -165,6 +165,22 @@ void Pedido::listar_produtos()
 	std::cout << std::endl;
 }
 
+//Irá remover o produto do estoque na hora da conclusão da compra
+void Pedido::remover_estoque()
+{
+	naoTem = true; //verifica se tem quantidade suficiente em estoque
+	for (int c = 0;c < p_size;c++)
+	{
+		if(quantidade[c]>carrinho[c].getQuantidade())
+		{
+			naoTem = false;
+			break;
+		}
+		Estoque::excluir_produto( carrinho[c].getID(),quantidade[c]);
+		std::cout << std::endl;
+	}
+}
+
 Pedido::~Pedido()
 {
 	

@@ -9,7 +9,7 @@ Cliente::Cliente(std::string nome, unsigned long long int cpf, int id_usuario, s
     : Usuario(nome, cpf, id_usuario) {
     this->endereco = endereco;
     this->telefone = telefone;
-    this->saldoEmConta = 1000;
+    this->saldoEmConta = 5000;
 }
 
 // MÉTODOS SET
@@ -127,6 +127,7 @@ void Cliente::meuCarrinho() {
             Compras.imprimirProdutosDisponiveis();
             Produto p = Compras.selecaoDeCompra();
             Carrinho.add_produto(p);
+            //Compras.RemoverProdutoEstoque();
             break;
         }
         case 3:
@@ -144,7 +145,7 @@ void Cliente::meuCarrinho() {
         }
         case 5:
         {
-            std::cout << "\n Valor total: " << Carrinho.valor_total() << std::endl;
+            std::cout << "\n Valor total: R$ " << Carrinho.valor_total() << std::endl;
             std::cout << "Valor total em conta é R$ " << getSaldo() << std::endl;
             if (getSaldo() < Carrinho.valor_total())
             {
@@ -154,9 +155,19 @@ void Cliente::meuCarrinho() {
             }
             else
             {
-                setSaldo(saldoEmConta);
-                std::cout << "O valor restante em conta é R$ " << getSaldo() << std::endl;
-                Carrinho.limpar_carrinho();
+                Carrinho.remover_estoque();
+                if(Carrinho.naoTem == false)
+                {
+                    std::cout << "Infelizmente não temos a quantidade desejada em estoque. Favor revisar seu carrinho!\n";
+                    break;
+                }
+                else
+                {
+                    setSaldo(saldoEmConta);
+                    std::cout << "O valor restante em conta é R$ " << getSaldo() << std::endl;
+                    Carrinho.limpar_carrinho();
+                    break;
+                }
             }
         }
         default:

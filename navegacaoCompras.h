@@ -3,6 +3,7 @@
 #include<iostream>
 #include"Estoque.h"
 #include"produto.h"
+#include"Pedido.h"
 
 class NavegacaoCompras : public Estoque
 {
@@ -16,7 +17,6 @@ class NavegacaoCompras : public Estoque
         void imprimirProdutosDisponiveis();
         Produto selecaoDeCompra();
         Produto RetornaProdutoBuscado(int codigo);
-        Produto RemocaoDaCompra();
 };
 
 #endif
