@@ -174,11 +174,6 @@ void Estoque::Ler_arquivo_estoque()
                 break;
         }
     }
-    
-    
-
-
-
 }
 
 void Estoque::setQtdDeProdutos(int qtde, int operacao)
@@ -463,7 +458,8 @@ tiposProduto:
     std::cout << "\tProduto adicionado ao estoque com sucesso!\n";
 }
 
-void Estoque::excluir_produto(int codigo, int qdte) {    // verificar lógica disso
+void Estoque::excluir_produto(int codigo, int qdte) 
+{
     int qtde_produto_restante;
     for (int i = 0; i < Estoque1.size(); i++)
     {
@@ -477,7 +473,8 @@ void Estoque::excluir_produto(int codigo, int qdte) {    // verificar lógica di
     }
 }
 
-void Estoque::excluir_produto(int codigo) { // verificar lógica disso
+void Estoque::excluir_produto(int codigo) 
+{
     for (int i = 0; i < Estoque1.size(); i++)
     {
         if (codigo == Estoque1[i]->getID())
@@ -508,7 +505,7 @@ void Estoque::Relatorio()
         std::cout << "____________________________ AREA DO ESTOQUE ____________________________" << std::endl;
         std::cout << "_________________________________________________________________________\n";
         std::cout << std::endl;
-    menu_estoque:
+        menu_estoque:
         std::cout << "\t1. Visualizar produtos por categoria\n";
         std::cout << std::endl;
         std::cout << "\tCELULARES, NOTEBOOKS, FONES DE OUVIDO, TELEVISORES\n";
