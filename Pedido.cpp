@@ -11,7 +11,6 @@
 int Pedido::ph_id = -8192;
 Pedido::Pedido()
 {
-	//std::cout << sizeof(quantidade) << std::endl;
 	for (int x = 0;x < size;x++)
 	{
 		quantidade[x] = 0;
@@ -55,7 +54,6 @@ double Pedido::valor_total()
 	double res = 0;
 	for (int x = 0;x < size;x++)
 	{
-		//std::cout << "$: " << carrinho[x].getPreco() << " x" << quantidade[x] << std::endl;
 		res += (carrinho[x].getPreco() * quantidade[x]);
 	}
 
@@ -87,7 +85,7 @@ int Pedido::remover_item(std::string in)
 	{
 		nm = in;
 	}
-	//std::cout << inx << std::endl;
+
 	inx--;
 	if (inx >= 0)
 	{

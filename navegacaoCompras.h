@@ -10,7 +10,6 @@ class NavegacaoCompras : public Estoque
         Estoque listar;
         int opc;
         int codigo;
-        //Produto compra;
 
     public:
         NavegacaoCompras();
