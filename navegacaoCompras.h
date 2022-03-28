@@ -4,7 +4,8 @@
 #include"Estoque.h"
 #include"produto.h"
 
-class NavegacaoCompras : public Estoque{
+class NavegacaoCompras : public Estoque
+{
     private:
         Estoque listar;
         int opc;

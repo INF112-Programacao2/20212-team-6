@@ -19,8 +19,6 @@ class Pedido
 		int remover_item(std::string in);
 		void listar_produtos();
 
-
-
 	private:
 
 };

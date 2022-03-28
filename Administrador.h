@@ -6,7 +6,8 @@
 #include "usuario.h"
 #include "Estoque.h"
 
-class Administrador : public Usuario {
+class Administrador : public Usuario 
+{
     public:
         static Estoque EstoqueDaLoja;       // estoque
         Administrador(std::string nome, int cpf, int id);
